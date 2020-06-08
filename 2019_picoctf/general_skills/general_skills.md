@@ -2,42 +2,55 @@
 
 ## 50 - 2Warm
 Problem:
-- Can you convert number 42 (base 10)        
+- Can you convert number 42 (base 10) to binary (base 2)?
+
+Solution:
+- Convert base 10 to base 2 using http://www.unitconversion.org/numbers/base-10-to-base-2-conversion.html
 
 Flag:
 ```
 picoCTF{101010}
 ```
 
+
 ## 50 - Lets Warm Up
 Problem:
 - If I told you a word started with 0x70 in hexadecimal, what would it start with in ASCII?
+
+Solution:
+- Use ascii table: http://www.asciitable.com/
 
 Flag:
 ```
 picoCTF{p}
 ``` 
 
+
 ## 50 - Warmed Up
 Problem:
 - What is 0x3D (base 16) in decimal (base 10)?
+
+Solution:
+- Use ascii table: http://www.asciitable.com/
 
 Flag:
 ```
 picoCTF{61}
 ```
 
+
 ## 100 - Bases
 Problem:
 - What does bDNhcm5fdGgzX3IwcDM1 mean? I think it has something to do with bases.
 
 Solution:
-- Convert Base 64 to ASCII/UTF-8
+- Convert Base 64 to ASCII/UTF-8: https://www.base64decode.org/
 
 Flag:
 ```
 picoCTF{l3arn_th3_r0p35}
 ```
+
 
 ## 100 - First Grep
 Problem:
@@ -47,14 +60,20 @@ Solution:
 ```
 grep 'picoCTF' first-grep
 ```
+
 Flag:
 ```
 picoCTF{grep_is_good_to_find_things_4b2451ea}
 ```
 
+
 ## 100 - Resources
 Problem:
-- We put together a bunch of resources to help you out on our website! If you go over there, you might even find a flag! https://picoctf.com/resources
+- We put together a bunch of resources to help you out on our website! If you go over there, you might even find a flag!
+
+Solution:
+- Go to: https://picoctf.com/resources
+- Scroll to bottom of the page to find the flag.
 
 Flag:
 ```
@@ -69,10 +88,12 @@ Solution
 ```
 strings strings-it | grep 'picoCTF'
 ```
+
 Flag:
 ```
 picoCTF{5tRIng5_1T_c7fff9e5}
 ```
+
 
 ## 100 - what's a net cat?
 Problem:
@@ -82,22 +103,27 @@ Solution:
 ```
 nc 2019shell1.picoctf.com 37851
 ```
+
 Flag:
 ```
 picoCTF{nEtCat_Mast3ry_628e0244}
 ```
+
 
 ## 200 - Based
 Problem:
 - To get truly 1337, you must understand different data encodings, such as hexadecimal or binary. Can you get the flag from this program to prove you are on the way to becoming 1337? Connect with nc 2019shell1.picoctf.com 20836.
 
 Solution:
-- binary -> ascii, octal -> ascii, hex -> ascii
+- binary -> ascii: https://www.rapidtables.com/convert/number/binary-to-ascii.html
+- octal -> ascii: http://www.unit-conversion.info/texttools/octal/
+- hex -> ascii: https://www.rapidtables.com/convert/number/hex-to-ascii.html
 
 Flag:
 ```
 picoCTF{learning_about_converting_values_6cdcad0d}
 ```
+
 
 ## 200 - First  Grep: Part II
 Problem:
@@ -107,10 +133,12 @@ Solution:
 ```
 grep -r 'picoCTF' /problems/first-grep--part-ii_6_84224d7d745e41d24bde7e7bc7062bbe/files/
 ```
+
 Flag:
 ```
 picoCTF{grep_r_to_find_this_5241c61f}
 ```
+
 
 ## 200 - Plumbing
 Problem:
@@ -120,10 +148,12 @@ Solution:
 ```
 nc 2019shell1.picoctf.com 21957 | tee -a plumbing.txt | grep 'picoCTF'
 ```
+
 Flag:
 ```
 picoCTF{digital_plumb3r_c1082838}
 ```
+
 
 ## 200 - whats-the-difference
 Problem:
@@ -133,10 +163,12 @@ Solution:
 ```
 cmp -bl cattos.jpg kitters.jpg | awk '{print $3}' | tr -d "\n"
 ```
+
 Flag:
 ```
 picoCTF{th3yr3_a5_d1ff3r3nt_4s_bu773r_4nd_j311y_aslkjfdsalkfslkflkjdsfdszmz10548}
 ```
+
 
 ## 200 - where-is-the-file
 Problem:
@@ -147,10 +179,12 @@ Solution:
 ls -a /problems/where-is-the-file_5_5302300652950d2248ac8bb0042d115e
 cat /problems/where-is-the-file_5_5302300652950d2248ac8bb0042d115e/.cant_see_me
 ```
+
 Flag:
 ```
 picoCTF{w3ll_that_d1dnt_w0RK_a871629e}
 ```
+
 
 ## 300 - flag_shop
 Problem:
@@ -218,6 +252,7 @@ Flag:
 picoCTF{m0n3y_bag5_818a7f84}
 ```
 
+
 ## 300 - mus1c
 Problem:
 - I wrote you a [song](https://github.com/sabinach/ctf/blob/master/2019_picoctf/general_skills/mus1c_lyrics.txt). Put it in the picoCTF{} flag format
@@ -225,12 +260,13 @@ Problem:
 Solution:
 - The lyrics are written in Rockstar (https://esolangs.org/wiki/Rockstar, https://github.com/RockstarLang/rockstar). 
 - Convert it to decimal using: https://codewithrockstar.com/online. 
-- Then convert decimal output to ASCII.
+- Then convert decimal output to ASCII: https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html
 
 Flag:
 ```
 picoCTF{rrrocknrn0113r}
 ```
+
 
 ## 350 - 1_wanna_b3_a_r0ck5star
 Problem:
@@ -240,7 +276,7 @@ Solution:
 - The lyrics are written in Rockstar again, but this time it's not outputting anything because it's waiting for inputs ("Listen"). 
 - Remove the lines: "Listen to.. Music is nothing" and "Else whisper 'That aint it, chief'".
 - Convert it to decimal using: https://codewithrockstar.com/online. 
-- Then convert decimal output to ASCII.
+- Then convert decimal output to ASCII: https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html
 
 Flag:
 ```
