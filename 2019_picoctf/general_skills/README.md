@@ -5,7 +5,7 @@ Problem:
 - Can you convert number 42 (base 10) to binary (base 2)?
 
 Solution:
-- Convert base 10 to base 2 using http://www.unitconversion.org/numbers/base-10-to-base-2-conversion.html
+- Convert base 10 to base 2 using: http://www.unitconversion.org/numbers/base-10-to-base-2-conversion.html
 
 Flag:
 ```
@@ -115,6 +115,9 @@ Problem:
 - To get truly 1337, you must understand different data encodings, such as hexadecimal or binary. Can you get the flag from this program to prove you are on the way to becoming 1337? Connect with nc 2019shell1.picoctf.com 20836.
 
 Solution:
+```
+nc 2019shell1.picoctf.com 20836
+```
 - binary -> ascii: https://www.rapidtables.com/convert/number/binary-to-ascii.html
 - octal -> ascii: http://www.unit-conversion.info/texttools/octal/
 - hex -> ascii: https://www.rapidtables.com/convert/number/hex-to-ascii.html
@@ -191,6 +194,9 @@ Problem:
 - There's a flag shop selling stuff, can you buy a flag? [Source](https://github.com/sabinach/ctf/blob/master/2019_picoctf/general_skills/store.c). Connect with nc 2019shell1.picoctf.com 63894.
 
 Solution:
+```
+nc 2019shell1.picoctf.com 63894
+```
 - Overflow the 4-bit signed integer total_cost to get a negative cost by using a large number, thereby adding to our account balance, giving us enough money to buy the real flag.
 
 Notes:
