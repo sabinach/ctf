@@ -1,0 +1,14 @@
+# Forensics
+
+## 
+Problem:
+- 
+
+Solution:
+- 
+
+Flag:
+```
+
+``` 
+

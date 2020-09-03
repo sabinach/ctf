@@ -1,4 +1,10 @@
-# Capture the Flag - Writeups (Solutions)
+# Capture the Flag - Writeups
+
+## 2020
+
+### TJCTF [[Writeup](https://github.com/sabinach/ctf/tree/master/2020_tjctf)]
+Game - https://tjctf.org/
+
 
 ## 2019
 
