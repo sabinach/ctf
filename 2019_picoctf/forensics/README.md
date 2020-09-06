@@ -18,7 +18,7 @@ Problem:
 - This [garden](https://github.com/sabinach/ctf/blob/master/2019_picoctf/forensics/garden.jpg) contains more than it seems. You can also find the file in /problems/glory-of-the-garden_4_cf9f4aaf458caf5268f8cf0a6465eb98 on the shell server.
 
 Solution:
-- Use hex editor and search for picoCTF
+- Use hex editor and search for the string "picoCTF"
 
 Flag:
 ```
@@ -46,7 +46,7 @@ Problem:
 - Find the [flag](https://github.com/sabinach/ctf/blob/master/2019_picoctf/forensics/pico_img.png) in this picture. You can also find the file in /problems/so-meta_0_7c0b2ae7a38b024c6b1c68cf50970a88.
 
 Solution:
-- Use hex editor and search for picoCTF
+- Use hex editor and search for the string "picoCTF"
 
 Flag:
 ```
@@ -60,7 +60,7 @@ Problem:
 
 Solution:
 - Go to https://stylesuxx.github.io/steganography/
-- Decode buildings.png
+- Decode ```buildings.png```
 
 Flag:
 ```
@@ -74,7 +74,7 @@ Problem:
 
 Solution:
 - Go to https://convertio.co/txt-png/
-- Upload extensions.txt, and the website will convert to extensions.png that will contain an image of the flag
+- Upload ```extensions.txt```, and the website will convert to ```extensions.png``` that will contain an image of the flag
 
 Flag:
 ```
