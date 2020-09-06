@@ -12,7 +12,7 @@ Solution:
 XXX
 ```
 
-Password Found:
+Output:
 ```
 XXX
 ```
@@ -38,7 +38,7 @@ Solution:
 cat readme
 ```
 
-Password Found:
+Output:
 ```
 boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 ```
@@ -56,7 +56,7 @@ Solution:
 cat ./-
 ```
 
-Password Found:
+Output:
 ```
 CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 ```
@@ -74,7 +74,7 @@ Solution:
 cat 'spaces in this filename'
 ```
 
-Password Found:
+Output:
 ```
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ```
@@ -94,7 +94,7 @@ ls -a
 cat .hidden
 ```
 
-Password Found:
+Output:
 ```
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ```
@@ -120,7 +120,7 @@ ssh bandit4@bandit.labs.overthewire.org -p 2220
 file ./inhere/* | grep ASCII | awk -F: '{print $1}' | xargs cat
 ```
 
-Password Found:
+Output:
 ```
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ```
@@ -144,7 +144,7 @@ find . -type f -size 1033c ! -executable -exec cat {} \;
 Helpful Links:
 - https://stackoverflow.com/questions/864316/how-to-pipe-list-of-files-returned-by-find-command-to-cat-to-view-all-the-files
 
-Password Found:
+Output:
 ```
 DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ```
@@ -166,7 +166,7 @@ cd ..
 find . -type f -size 33c -group bandit6 -user bandit7  -exec cat {} \;
 ```
 
-Password Found:
+Output:
 ```
 HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 ```
@@ -184,7 +184,7 @@ Solution:
 grep '^millionth' < data.txt | awk '{print $2}'
 ```
 
-Password Found:
+Output:
 ```
 cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 ```
@@ -202,7 +202,7 @@ Solution:
 sort data.txt | uniq -u
 ```
 
-Password Found:
+Output:
 ```
 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 ```
@@ -210,7 +210,7 @@ UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 
 ## Level 9 → Level 10
 Connect:```ssh bandit9@bandit.labs.overthewire.org -p 2220```      
-Password:```truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk```
+Password:```UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR```
 
 Problem:
 - The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
@@ -225,7 +225,7 @@ Mistake:
 strings data.txt | grep '^===*' | awk '{print $2}'
 ```
 
-Password Found:
+Output:
 ```
 ========== the*2i"4
 =:G e
@@ -241,20 +241,37 @@ S=A.H&^
 ```
 
 
-## XXX
-Connect:```XXX```      
-Password:```XXX```
+## Level 10 → Level 11
+Connect:```ssh bandit10@bandit.labs.overthewire.org -p 2220```      
+Password:```truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk```
 
 Problem:
-- XXX
+- The password for the next level is stored in the file data.txt, which contains base64 encoded data
+
+Solution:
+```
+base64 -d data.txt
+```
+
+Output:
+```
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+```
+
+
+## Level 11 → Level 12
+Connect:```ssh bandit11@bandit.labs.overthewire.org -p 2220```      
+Password:```IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR```
+
+Problem:
+- The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
 
 Solution:
 ```
 XXX
 ```
 
-Password Found:
+Output:
 ```
 XXX
 ```
-
