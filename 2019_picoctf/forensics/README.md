@@ -103,14 +103,14 @@ Problem:
 - I stopped using YellowPages and moved onto WhitePages... but the [page they gave me](https://github.com/sabinach/ctf/blob/master/2019_picoctf/forensics/whitepages.txt) is all blank!
 
 Solution:
-- Open the file using a text editor with a black background, and notice that the file consists of only <spaces> and <dots>
+- Open the file using a text editor with a black background, and notice that the file consists of only SPACES and DOTS
 - Notice that it looks like morse code, but it's not
 - Open a hex editor to view the hex values of the original file
-- Notice that comparing the original file and its corresponding hex values, <spaces> correspond to ```20``` in hex, and <dots> correspond to ```E28083``` in hex
+- Notice that comparing the original file and its corresponding hex values, SPACES correspond to ```20``` in hex, and DOTS correspond to ```E28083``` in hex
 - Replace ```20``` --> ```0``` (aka spaces), and ```E28083``` --> ```1``` (aka dots)
 - Convert this new binary representation to ASCII: https://www.rapidtables.com/convert/number/binary-to-ascii.html
 
-Image of the <spaces> and <dots>
+Image of the original SPACES and DOTS
 ![WhitePages Spaces and Dots](https://github.com/sabinach/ctf/blob/master/2019_picoctf/forensics/whitepages.png)
 
 Flag:
