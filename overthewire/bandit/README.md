@@ -496,6 +496,7 @@ SF:n");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 88.02 seconds
+<<<
 ```
 ```
 openssl s_client -connect localhost:31790
@@ -580,6 +581,7 @@ Solution:
 # Force pseudo-tty allocation. This can be used to execute arbitrary screen-based programs on a remote machine, which can be very useful
 ssh -t bandit18@bandit.labs.overthewire.org -p 2220 /bin/sh
 kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
 cat readme
 ```
 
@@ -606,7 +608,7 @@ file bandit20-do
 >>> Example: ./bandit20-do id
 
 ./bandit20-do id
-uid=11019(bandit19) gid=11019(bandit19) euid=11020(bandit20) groups=11019(bandit19)
+>>> uid=11019(bandit19) gid=11019(bandit19) euid=11020(bandit20) groups=11019(bandit19)
 
 # notice that owner of bandit20-do is bandit20 (and group is bandit19)
 ls -l
@@ -642,13 +644,12 @@ ls -l suconnect
 >>> Usage: ./suconnect <portnumber>
 >>> This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
 
-XXXXXXXXX TBD
+XXXXXXXXX TBD XXXXXXXXX 
 ```
 
 Mistake:
 ```
 nmap localhost
-
 >>>
 Starting Nmap 7.40 ( https://nmap.org ) at 2020-09-07 07:43 CEST
 Nmap scan report for localhost (127.0.0.1)
