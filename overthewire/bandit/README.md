@@ -644,7 +644,19 @@ ls -l suconnect
 >>> Usage: ./suconnect <portnumber>
 >>> This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
 
-XXXXXXXXX TBD XXXXXXXXX 
+# [terminal 1] create port listener
+nc -l -p 31337
+
+# [terminal 2] connect to port via suconnect
+./suconnect 31337
+
+# [terminal 1] submit password
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+>>> gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+
+# [terminal 2] receive and send new password
+>>> Read: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+>>> Password matches, sending next password
 ```
 
 Mistake:
@@ -667,9 +679,112 @@ Nmap done: 1 IP address (1 host up) scanned in 0.10 seconds
 >>> ERROR: This doesn't match the current password!
 ```
 
+Helpful Links:
+- https://www.youtube.com/watch?v=EmWV9rIU2oQ&ab_channel=Firewalls.com
+- Local Test:
+     * ```nc -l -p 31337``` [terminal 1]
+     * ```nc localhost 31337```  [terminal 2]
+
 Output:
+```
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+```
+
+
+## Level 21 → Level 22
+Connect:```ssh bandit21@bandit.labs.overthewire.org -p 2220```      
+Password:```gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr```
+
+Problem:
+- A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+Solution:
+```
+cd /etc/cron.d
+ls
+
+cat cronjob_bandit22
+>>> @reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+>>> * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+
+cat /usr/bin/cronjob_bandit22.sh
+>>> #!/bin/bash
+>>> chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+>>> cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+
+cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+>>> Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+```
+
+Output:
+```
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+```
+
+
+## Level 22 → Level 23
+Connect:```ssh bandit22@bandit.labs.overthewire.org -p 2220```      
+Password:```Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI```
+
+Problem:
+- A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+- NOTE: Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. If you are having problems understanding what it does, try executing it to see the debug information it prints.
+
+Solution:
+```
+cd /etc/cron.d
+ls
+
+cat cronjob_bandit23
+>>> @reboot bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+>>> * * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+
+cat /usr/bin/cronjob_bandit23.sh
+>>>
+#!/bin/bash
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+<<<
+
+cd /usr/bin
+./cronjob_bandit23.sh
+>>> Copying passwordfile /etc/bandit_pass/bandit22 to /tmp/8169b67bd894ddbb4412f91573b38db3
+
+# this shows THIS level's password, not the next level's!
+cat /tmp/8169b67bd894ddbb4412f91573b38db3
+>>> Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
+# literally just copy the script into terminal, but change myname
+myname=bandit23
+echo I am user $myname | md5sum | cut -d ' ' -f 1
+>>> 8ca319486bfbbc3663ea0fbe81326349
+
+cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+>>> jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+```
+
+Output:
+```
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+```
+
+
+## Level 23 → Level 24
+Connect:```ssh bandit23@bandit.labs.overthewire.org -p 2220```      
+Password:```jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n```
+
+Problem:
+- XXX
+
+Solution:
 ```
 XXX
 ```
 
+Output:
+```
+XXX
+```
 
