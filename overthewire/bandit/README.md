@@ -8,6 +8,9 @@ Problem:
 - The goal of this level is for you to log into the game using SSH. The host to which you need to connect is bandit.labs.overthewire.org, on port 2220. The username is bandit0 and the password is bandit0. Once logged in, go to the Level 1 page to find out how to beat Level 1.
 
 
+---
+
+
 ##  Level 0 → Level 1
 Connect:```ssh bandit0@bandit.labs.overthewire.org -p 2220```      
 Password:```bandit0```
@@ -24,6 +27,9 @@ Output:
 ```
 boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 ```
+
+
+---
 
 
 ## Level 1 → Level 2
@@ -44,6 +50,9 @@ CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 ```
 
 
+---
+
+
 ## Level 2 → Level 3
 Connect:```ssh bandit2@bandit.labs.overthewire.org -p 2220```      
 Password:```CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9```
@@ -60,6 +69,9 @@ Output:
 ```
 UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 ```
+
+
+---
 
 
 ## Level 3 → Level 4
@@ -80,6 +92,9 @@ Output:
 ```
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 ```
+
+
+---
 
 
 ## Level 4 → Level 5
@@ -108,6 +123,9 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 ```
 
 
+---
+
+
 ## Level 5 → Level 6
 Connect:```ssh bandit5@bandit.labs.overthewire.org -p 2220```      
 Password:```koReBOKuIDDepwhWk7jZC0RTdopnAYKh```
@@ -132,6 +150,9 @@ DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 ```
 
 
+---
+
+
 ## Level 6 → Level 7
 Connect:```ssh bandit6@bandit.labs.overthewire.org -p 2220```      
 Password:```DXjZPULLxYr17uwoI01bNLQbtFemEgo7```
@@ -154,6 +175,9 @@ HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 ```
 
 
+---
+
+
 ## Level 7 → Level 8
 Connect:```ssh bandit7@bandit.labs.overthewire.org -p 2220```      
 Password:```HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs```
@@ -172,6 +196,9 @@ cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 ```
 
 
+---
+
+
 ## Level 8 → Level 9
 Connect:```ssh bandit8@bandit.labs.overthewire.org -p 2220```      
 Password:```cvX2JJa4CFALtqS87jk27qwqGhBM9plV```
@@ -188,6 +215,9 @@ Output:
 ```
 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 ```
+
+
+---
 
 
 ## Level 9 → Level 10
@@ -223,6 +253,9 @@ S=A.H&^
 ```
 
 
+---
+
+
 ## Level 10 → Level 11
 Connect:```ssh bandit10@bandit.labs.overthewire.org -p 2220```      
 Password:```truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk```
@@ -241,6 +274,9 @@ The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 ```
 
 
+---
+
+
 ## Level 11 → Level 12
 Connect:```ssh bandit11@bandit.labs.overthewire.org -p 2220```      
 Password:```IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR```
@@ -257,6 +293,9 @@ Output:
 ```
 The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 ```
+
+
+---
 
 
 ## Level 12 → Level 13
@@ -328,12 +367,14 @@ Helpful Links:
 - https://help.nexcess.net/77285-other/how-to-decompress-files-in-gzip
 - https://superuser.com/questions/480950/how-to-decompress-a-bz2-file
 - https://www.cyberciti.biz/faq/tar-extract-linux/
-- 
 
 Output:
 ```
 The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 ```
+
+
+---
 
 
 ## Level 13 → Level 14
@@ -366,6 +407,9 @@ Output:
 ```
 
 
+---
+
+
 ## Level 14 → Level 15
 Connect:```ssh bandit14@bandit.labs.overthewire.org -p 2220```      
 Password:```4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e```
@@ -384,6 +428,9 @@ Output:
 Correct!
 BfMYroe26WYalil77FoDi9qh59eK5xNr
 ```
+
+
+---
 
 
 ## Level 15 → Level 16
@@ -409,6 +456,9 @@ Output:
 Correct!
 cluFn7wTiGryunymYOu4RcffSxQluehd
 ```
+
+
+---
 
 
 ## Level 16 → Level 17
@@ -516,6 +566,9 @@ vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 ```
 
 
+---
+
+
 ## Level 17 → Level 18
 Connect/Password:
 ```
@@ -549,6 +602,9 @@ Output:
 ```
 
 
+---
+
+
 ## Level 18 → Level 19
 Connect:```ssh bandit18@bandit.labs.overthewire.org -p 2220```      
 Password:```kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd```
@@ -569,6 +625,9 @@ Output:
 ```
 IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 ```
+
+
+---
 
 
 ## Level 19 → Level 20
@@ -601,6 +660,9 @@ Output:
 ```
 GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 ```
+
+
+---
 
 
 ## Level 20 → Level 21
@@ -671,6 +733,9 @@ gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
 ```
 
 
+---
+
+
 ## Level 21 → Level 22
 Connect:```ssh bandit21@bandit.labs.overthewire.org -p 2220```      
 Password:```gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr```
@@ -703,6 +768,9 @@ Output:
 ```
 Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 ```
+
+
+---
 
 
 ## Level 22 → Level 23
@@ -753,6 +821,9 @@ Output:
 ```
 jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 ```
+
+
+---
 
 
 ## Level 23 → Level 24
@@ -866,6 +937,9 @@ UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 ```
 
 
+---
+
+
 ## Level 24 → Level 25
 Connect:```ssh bandit24@bandit.labs.overthewire.org -p 2220```      
 Password:```UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ```
@@ -914,6 +988,9 @@ Correct!
 The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 Exiting.
 ```
+
+
+---
 
 
 ## Level 25 → Level 26
@@ -1073,6 +1150,9 @@ Output:
 ```
 
 
+---
+
+
 ## Level 26 → Level 27
 Connect/Password:
 ```
@@ -1122,6 +1202,9 @@ Output:
 ```
 
 
+---
+
+
 ## Level 27 → Level 28
 Connect:```ssh bandit27@bandit.labs.overthewire.org -p 2220```      
 Password:```3ba3118a22e93127a4ed485be72ef5ea```
@@ -1147,6 +1230,9 @@ Output:
 ```
 The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
 ```
+
+
+---
 
 
 ## Level 28 → Level 29
@@ -1202,6 +1288,9 @@ index 3f7cee8..5c6457b 100644
 -- password: bbc96594b4e001778eee9975372716b2
 +- password: xxxxxxxxxx
 ```
+
+
+---
 
 
 ## Level 29 → Level 30
@@ -1263,6 +1352,9 @@ Some notes for bandit30 of bandit.
 ```
 
 
+---
+
+
 ## Level 30 → Level 31
 Connect:```ssh bandit30@bandit.labs.overthewire.org -p 2220```      
 Password:```5b90576bedb2cc04c86a9e924ce42faf```
@@ -1318,6 +1410,9 @@ Output:
 ```
 47e603bb428404d265f59c42920d81e5
 ```
+
+
+---
 
 
 ## Level 31 → Level 32
@@ -1381,6 +1476,9 @@ error: failed to push some refs to 'ssh://bandit31-git@localhost/home/bandit31-g
 ```
 
 
+---
+
+
 ## Level 32 → Level 33
 Connect:```ssh bandit32@bandit.labs.overthewire.org -p 2220```      
 Password:```56a9bf19c63d650ce78e6ec0354ee45e```
@@ -1428,6 +1526,9 @@ c9c3199ddf4121b10cf581a98d51caee
 ```
 
 
+---
+
+
 ## Level 33 → Level 34
 Connect:```ssh bandit33@bandit.labs.overthewire.org -p 2220```      
 Password:```c9c3199ddf4121b10cf581a98d51caee```
@@ -1450,24 +1551,4 @@ Keep an eye out for an announcement on our usual communication channels!
 In the meantime, you could play some of our other wargames.
 
 If you have an idea for an awesome new level, please let us know!
-```
-
----
-
-# Template
-## XXX
-Connect:```ssh banditXX@bandit.labs.overthewire.org -p 2220```      
-Password:```XXX```
-
-Problem:
-- XXX
-
-Solution:
-```
-XXX
-```
-
-Output:
-```
-XXX
 ```
