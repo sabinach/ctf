@@ -1,7 +1,7 @@
 # Bandit
 
 ## XXX
-Connect:```XXX```      
+Connect:```ssh banditXX@bandit.labs.overthewire.org -p 2220```      
 Password:```XXX```
 
 Problem:
@@ -265,6 +265,95 @@ Password:```IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR```
 
 Problem:
 - The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+
+Solution:
+```
+cat data.txt | tr '[a-zA-Z]' '[n-za-mN-ZA-M]'
+```
+
+Output:
+```
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+```
+
+
+## Level 12 → Level 13
+Connect:```ssh bandit12@bandit.labs.overthewire.org -p 2220```      
+Password:```5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu```
+
+Problem:
+- The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+
+Solution:
+```
+mkdir /tmp/<username>
+cp data.txt /tmp/<username>/data.txt
+cd /tmp/<username>/data.txt
+
+# reverse hex dump
+xxd -r data.txt data
+
+file data
+>>> data: gzip compressed data, was "data2.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+mv data data.gz
+gzip -d data.gz
+
+file data
+>>> data: bzip2 compressed data, block size = 900k
+mv data data.bz2
+bzip2 -d data.bz2
+
+file data
+>>> data: gzip compressed data, was "data4.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+mv data data.gz
+gzip -d data.gz
+
+file data
+>>> data: POSIX tar archive (GNU)
+mv data data.tar
+tar -xvf data.tar
+>>> data5.bin
+
+file data5.bin
+>>> data5.bin: POSIX tar archive (GNU)
+mv data5.bin data5.tar
+tar -xvf data5.tar
+>>> data6.bin
+
+file data6.bin
+>>> data6.bin: bzip2 compressed data, block size = 900k
+mv data6.bin data6.bz2
+bzip2 -d data6.bz2
+
+file data6
+>>> data6: POSIX tar archive (GNU)
+mv data6 data6.tar
+tar -xvf data6.tar
+>>> data8.bin
+
+file data8.bin
+>>> data8.bin: gzip compressed data, was "data9.bin", last modified: Thu May  7 18:14:30 2020, max compression, from Unix
+mv data8.bin data8.gz
+gzip -d data8.gz
+
+file data8
+>>> data8: ASCII text
+
+cat data8
+```
+
+Output:
+```
+The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+```
+
+
+## Level 13 → Level 14
+Connect:```ssh bandit13@bandit.labs.overthewire.org -p 2220```      
+Password:```8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL```
+
+Problem:
+- The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on
 
 Solution:
 ```

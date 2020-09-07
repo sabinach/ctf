@@ -18,5 +18,5 @@ Resources - https://picoctf.com/resources
 
 ## OverTheWire
 
-### Bandit [[Writeup](https://github.com/sabinach/ctf/tree/master/overthewire/bandit)]
+### Bandit [[Writeup](https://github.com/sabinach/ctf/tree/master/overthewire/bandit.md)]
 Game - https://overthewire.org/wargames/bandit/      
