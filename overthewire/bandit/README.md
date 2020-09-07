@@ -421,8 +421,6 @@ Problem:
 Solution:
 ```
 nmap -sV --script ssl-cert -p 31000-32000 localhost
-```
-```
 >>>
 Starting Nmap 7.40 ( https://nmap.org ) at 2020-09-07 06:52 CEST
 Nmap scan report for localhost (127.0.0.1)
@@ -688,14 +686,16 @@ ls
 cat cronjob_bandit22
 >>> @reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
 >>> * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
-
+```
+```
 cat /usr/bin/cronjob_bandit22.sh
 >>> 
 #!/bin/bash
 chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 <<<
-
+```
+```
 cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 ```
 
@@ -721,7 +721,8 @@ ls
 cat cronjob_bandit23
 >>> @reboot bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
 >>> * * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
-
+```
+```
 cat /usr/bin/cronjob_bandit23.sh
 >>>
 #!/bin/bash
@@ -730,7 +731,8 @@ mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
 echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
 cat /etc/bandit_pass/$myname > /tmp/$mytarget
 <<<
-
+```
+```
 cd /usr/bin
 ./cronjob_bandit23.sh
 >>> Copying passwordfile /etc/bandit_pass/bandit22 to /tmp/8169b67bd894ddbb4412f91573b38db3
@@ -793,7 +795,8 @@ do
     fi
 done
 <<<
-
+```
+```
 cd /usr/bin
 ./cronjob_bandit24.sh
 >>>
@@ -813,11 +816,11 @@ rm: cannot remove './pygettext': Permission denied
 Handling pygettext2.7
 ...
 <<<
-
+```
+```
 ls -al /usr/bin/cronjob_bandit24.sh
 >>> -rwxr-x--- 1 bandit24 bandit23 376 May 14 09:41 /usr/bin/cronjob_bandit24.sh
-```
-```
+
 cd /var/spool
 ls -l
 >>> bandit24  cron  mail  rsyslog
@@ -839,13 +842,15 @@ vim getPassword24.sh
 
 touch password24.txt
 chmod 666 password24.txt
-
+```
+```
 # write the following lines of code into getPassword24.sh 
 >>>
 #!/bin/bash
 cat /etc/bandit_pass/bandit24 > /tmp/sallycolly2/password24.txt
 <<<
-
+```
+```
 cp getPassword24.sh /var/spool/bandit24/getPassword24.sh
 ls -al /var/spool/bandit24/getPassword24.sh
 >>> -rwxr-xr-x 1 bandit23 bandit23 76 Sep  7 21:45 /var/spool/bandit24/getPassword24.sh
@@ -883,7 +888,8 @@ chmod +x getPassword25.sh
 vim getPassword25.sh
 
 touch output.txt
-
+```
+```
 # write the following lines of code into getPassword25.sh 
 >>>
 #!/bin/bash
@@ -896,7 +902,8 @@ done | nc localhost 30002 > output.txt
 
 cat output.txt | grep -v "Wrong"
 <<<
-
+```
+```
 ./getPassword25.sh
 ```
 
@@ -1028,7 +1035,8 @@ bandit29-git:x:11529:11529::/home/bandit29-git:/usr/bin/git-shell
 bandit30-git:x:11530:11530::/home/bandit30-git:/usr/bin/git-shell
 bandit31-git:x:11531:11531::/home/bandit31-git:/usr/bin/git-shell
 <<<
-
+```
+```
 cat /usr/bin/showtext
 >>>
 #!/bin/sh
@@ -1066,6 +1074,7 @@ Output:
 
 
 ## Level 26 → Level 27
+Connect/Password:
 ```
 # ON PERSONAL COMPUTER (not on bandit25 server)
 
@@ -1156,7 +1165,8 @@ cd /tmp/<username28>
 git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
 yes
 0ef186ac70e04ea33b4c1853d2526fa2
-
+```
+```
 cd repo
 cat README.md
 >>>
@@ -1168,7 +1178,8 @@ Some notes for level29 of bandit.
 - username: bandit29
 - password: xxxxxxxxxx
 <<<
-
+```
+```
 git log -p
 ```
 
@@ -1209,7 +1220,8 @@ cd /tmp/<username29>
 git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
 yes
 bbc96594b4e001778eee9975372716b2
-
+```
+```
 cd repo
 cat README.md
 >>>
@@ -1221,7 +1233,8 @@ Some notes for bandit30 of bandit.
 - username: bandit30
 - password: <no passwords in production!>
 <<<
-
+```
+```
 git branch
 >>> * master
 
@@ -1270,7 +1283,8 @@ yes
 cd repo
 cat README.md
 >>> just an epmty file... muahaha
-
+```
+```
 # extremely troll: "Ben Dover".. "noone" lol 
 git log
 >>>
@@ -1280,7 +1294,8 @@ Date:   Thu May 7 20:14:54 2020 +0200
 
     initial commit of README.md
 <<<
-
+```
+```
 cd .git
 cat packed-refs
 >>>
@@ -1288,7 +1303,8 @@ cat packed-refs
 3aefa229469b7ba1cc08203e5d8fa299354c496b refs/remotes/origin/master
 f17132340e8ee6c159e0a4a6bc6f80e1da3b1aea refs/tags/secret 
 <<<
-
+```
+```
 # this doesn't do anything sigh....
 git fetch origin tag secret
 yes
@@ -1320,7 +1336,8 @@ cd /tmp/<username31>
 git clone ssh://bandit31-git@localhost/home/bandit31-git/repo
 yes
 47e603bb428404d265f59c42920d81e5
-
+```
+```
 cd repo
 cat README.md
 >>>
@@ -1331,7 +1348,8 @@ Details:
     Content: 'May I come in?'
     Branch: master
 <<<
-
+```
+```
 # add the following to key.txt
 vim key.txt
 >>> May I come in?
