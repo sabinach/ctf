@@ -1,23 +1,5 @@
 # Bandit
 
-## XXX
-Connect:```ssh banditXX@bandit.labs.overthewire.org -p 2220```      
-Password:```XXX```
-
-Problem:
-- XXX
-
-Solution:
-```
-XXX
-```
-
-Output:
-```
-XXX
-```
-
-
 ## Level 0
 Connect:```ssh bandit0@bandit.labs.overthewire.org -p 2220```      
 Password:```bandit0```
@@ -715,7 +697,6 @@ cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 <<<
 
 cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
->>> Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 ```
 
 Output:
@@ -764,7 +745,6 @@ echo I am user $myname | md5sum | cut -d ' ' -f 1
 >>> 8ca319486bfbbc3663ea0fbe81326349
 
 cat /tmp/8ca319486bfbbc3663ea0fbe81326349
->>> jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 ```
 
 Output:
@@ -873,7 +853,6 @@ ls -al /var/spool/bandit24/getPassword24.sh
 (wait 60 sec)
 
 cat password24.txt
->>> UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 ```
 
 Output:
@@ -919,17 +898,14 @@ cat output.txt | grep -v "Wrong"
 <<<
 
 ./getPassword25.sh
->>> 
-I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
-Correct!
-The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
-Exiting.
-<<<
 ```
 
 Output:
 ```
-uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+Correct!
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+Exiting.
 ```
 
 
@@ -1193,11 +1169,287 @@ Some notes for level29 of bandit.
 - password: xxxxxxxxxx
 <<<
 
+git log -p
+```
 
+Output:
+```
+commit edd935d60906b33f0619605abd1689808ccdd5ee
+Author: Morla Porla <morla@overthewire.org>
+Date:   Thu May 7 20:14:49 2020 +0200
+
+    fix info leak
+
+diff --git a/README.md b/README.md
+index 3f7cee8..5c6457b 100644
+--- a/README.md
++++ b/README.md
+@@ -4,5 +4,5 @@ Some notes for level29 of bandit.
+ ## credentials
+
+ - username: bandit29
+-- password: bbc96594b4e001778eee9975372716b2
++- password: xxxxxxxxxx
+```
+
+
+## Level 29 → Level 30
+Connect:```ssh bandit29@bandit.labs.overthewire.org -p 2220```      
+Password:```bbc96594b4e001778eee9975372716b2```
+
+Problem:
+- There is a git repository at ssh://bandit29-git@localhost/home/bandit29-git/repo. The password for the user bandit29-git is the same as for the user bandit29.
+- Clone the repository and find the password for the next level.
+
+Solution:
+```
+mkdir /tmp/<username29>
+cd /tmp/<username29>
+
+git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
+yes
+bbc96594b4e001778eee9975372716b2
+
+cd repo
+cat README.md
+>>>
+# Bandit Notes
+Some notes for bandit30 of bandit.
+
+## credentials
+
+- username: bandit30
+- password: <no passwords in production!>
+<<<
+
+git branch
+>>> * master
+
+git branch -a
+>>>
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/dev
+  remotes/origin/master
+  remotes/origin/sploits-dev
+<<<
+
+git checkout origin/dev
+cat README.md
+```
+
+Output:
+```
+# Bandit Notes
+Some notes for bandit30 of bandit.
+
+## credentials
+
+- username: bandit30
+- password: 5b90576bedb2cc04c86a9e924ce42faf 
+```
+
+
+## Level 30 → Level 31
+Connect:```ssh bandit30@bandit.labs.overthewire.org -p 2220```      
+Password:```5b90576bedb2cc04c86a9e924ce42faf```
+
+Problem:
+- There is a git repository at ssh://bandit30-git@localhost/home/bandit30-git/repo. The password for the user bandit30-git is the same as for the user bandit30.a
+- Clone the repository and find the password for the next level.
+
+Solution:
+```
+mkdir /tmp/<username30>
+cd /tmp/<username30>
+
+git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
+yes
+5b90576bedb2cc04c86a9e924ce42faf
+
+cd repo
+cat README.md
+>>> just an epmty file... muahaha
+
+# extremely troll: "Ben Dover".. "noone" lol 
+git log
+>>>
+commit 3aefa229469b7ba1cc08203e5d8fa299354c496b
+Author: Ben Dover <noone@overthewire.org>
+Date:   Thu May 7 20:14:54 2020 +0200
+
+    initial commit of README.md
+<<<
+
+cd .git
+cat packed-refs
+>>>
+# pack-refs with: peeled fully-peeled
+3aefa229469b7ba1cc08203e5d8fa299354c496b refs/remotes/origin/master
+f17132340e8ee6c159e0a4a6bc6f80e1da3b1aea refs/tags/secret 
+<<<
+
+# this doesn't do anything sigh....
+git fetch origin tag secret
+yes
+5b90576bedb2cc04c86a9e924ce42faf
+
+# shows associated commit
+git show secret
+```
+
+Output:
+```
+47e603bb428404d265f59c42920d81e5
+```
+
+
+## Level 31 → Level 32
+Connect:```ssh bandit31@bandit.labs.overthewire.org -p 2220```      
+Password:```47e603bb428404d265f59c42920d81e5```
+
+Problem:
+- There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo. The password for the user bandit31-git is the same as for the user bandit31.
+- Clone the repository and find the password for the next level.
+
+Solution:
+```
+mkdir /tmp/<username31>
+cd /tmp/<username31>
+
+git clone ssh://bandit31-git@localhost/home/bandit31-git/repo
+yes
+47e603bb428404d265f59c42920d81e5
+
+cd repo
+cat README.md
+>>>
+This time your task is to push a file to the remote repository.
+
+Details:
+    File name: key.txt
+    Content: 'May I come in?'
+    Branch: master
+<<<
+
+# add the following to key.txt
+vim key.txt
+>>> May I come in?
+
+vim .gitignore
+**remove *.txt**
+
+git add .
+git commit -m "added key.txt"
+git push
+yes
+47e603bb428404d265f59c42920d81e5
+```
+
+Output:
+```
+remote: ### Attempting to validate files... ####
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote:
+remote: Well done! Here is the password for the next level:
+remote: 56a9bf19c63d650ce78e6ec0354ee45e
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote:
+To ssh://localhost/home/bandit31-git/repo
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'ssh://bandit31-git@localhost/home/bandit31-git/repo'
+```
+
+
+## Level 32 → Level 33
+Connect:```ssh bandit32@bandit.labs.overthewire.org -p 2220```      
+Password:```56a9bf19c63d650ce78e6ec0354ee45e```
+
+Problem:
+- After all this git stuff its time for another escape. Good luck!
+
+Solution:
+```
+# shown at login
+>>>WELCOME TO THE UPPERCASE SHELL
+
+ls
+>>> sh: 1: LS: not found
+
+# switch to bash (no letters needed, so no conversion!)
+$0
+
+# so basically echo'ing $0 will produce "sh" (not uppercase), which will force the shell to accept the command, and switch us to the regular sh bash
+echo $0
+>>> sh
+
+cat /etc/bandit_pass/bandit33
+```
+
+Mistake:
+```
+ls='ls'
+"$ls"
+>>> sh: 1: : Permission denied
+
+cd='cat /etc/bandit_pass/bandit32'
+"$cd"
+>>> sh: 1: : Permission denied
+```
+
+Helpful Links:
+- https://bash.cyberciti.biz/guide/$0
+- https://unix.stackexchange.com/questions/444946/how-can-we-run-a-command-stored-in-a-variable
+- https://www.cyberciti.biz/faq/linux-unix-shell-programming-converting-lowercase-uppercase/
+
+Output:
+```
+c9c3199ddf4121b10cf581a98d51caee
+```
+
+
+## Level 33 → Level 34
+Connect:```ssh bandit33@bandit.labs.overthewire.org -p 2220```      
+Password:```c9c3199ddf4121b10cf581a98d51caee```
+
+Problem:
+- At this moment, level 34 does not exist yet.
+
+Solution:
+```
+cat README.txt
+```
+
+Output:
+```
+Congratulations on solving the last level of this game!
+
+At this moment, there are no more levels to play in this game. However, we are constantly working
+on new levels and will most likely expand this game with more levels soon.
+Keep an eye out for an announcement on our usual communication channels!
+In the meantime, you could play some of our other wargames.
+
+If you have an idea for an awesome new level, please let us know!
+```
+
+---
+
+# Template
+## XXX
+Connect:```ssh banditXX@bandit.labs.overthewire.org -p 2220```      
+Password:```XXX```
+
+Problem:
+- XXX
+
+Solution:
+```
+XXX
 ```
 
 Output:
 ```
 XXX
 ```
-
