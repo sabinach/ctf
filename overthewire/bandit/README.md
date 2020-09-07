@@ -535,7 +535,6 @@ vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 ```
 
 
-
 ## Level 17 → Level 18
 Connect/Password:
 ```
@@ -549,11 +548,12 @@ ssh -i level17-sshkey.private bandit17@bandit.labs.overthewire.org -p 2220
 ```
 
 Problem:
-- XXX
+- There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new
+- NOTE: if you have solved this level and see ‘Byebye!’ when trying to log into bandit18, this is related to the next level, bandit19
 
 Solution:
 ```
-XXX
+diff passwords.old passwords.new
 ```
 
 Helpful Links:
@@ -561,6 +561,114 @@ Helpful Links:
 
 Output:
 ```
+42c42
+< w0Yfolrc5bwjS4qw5mq1nnQi6mF03bii
+---
+> kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+```
+
+
+## Level 18 → Level 19
+Connect:```ssh bandit18@bandit.labs.overthewire.org -p 2220```      
+Password:```kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd```
+
+Problem:
+- The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
+
+Solution:
+```
+# Force pseudo-tty allocation. This can be used to execute arbitrary screen-based programs on a remote machine, which can be very useful
+ssh -t bandit18@bandit.labs.overthewire.org -p 2220 /bin/sh
+kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+cat readme
+```
+
+Output:
+```
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+```
+
+
+## Level 19 → Level 20
+Connect:```ssh bandit19@bandit.labs.overthewire.org -p 2220```      
+Password:```IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x```
+
+Problem:
+- To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
+
+Solution (Version 1):
+```
+file bandit20-do
+>>> bandit20-do: setuid ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=8e941f24b8c5cd0af67b22b724c57e1ab92a92a1, not stripped
+
+./bandit20-do
+>>> Run a command as another user. 
+>>> Example: ./bandit20-do id
+
+./bandit20-do id
+uid=11019(bandit19) gid=11019(bandit19) euid=11020(bandit20) groups=11019(bandit19)
+
+# notice that owner of bandit20-do is bandit20 (and group is bandit19)
+ls -l
+-rwsr-x--- 1 bandit20 bandit19 7296 May  7 20:14 bandit20-do
+
+./bandit20-do cat /etc/bandit_pass/bandit20
+```
+
+Output:
+```
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+```
+
+
+## Level 20 → Level 21
+Connect:```ssh bandit20@bandit.labs.overthewire.org -p 2220```      
+Password:```GbKksEFF4yrVs6il55v6gwY5aVje5f0j```
+
+Problem:
+- There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
+- NOTE: Try connecting to your own network daemon to see if it works as you think
+
+Solution:
+```
+file suconnect
+>>> suconnect: setuid ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=74c0f6dc184e0412b6dc52e542782f43807268e1, not stripped
+
+# notice that owner of suconnect is bandit21 (and group is bandit20)
+ls -l suconnect
+>>> -rwsr-x--- 1 bandit21 bandit20 12088 May  7 20:14 suconnect
+
+./suconnect
+>>> Usage: ./suconnect <portnumber>
+>>> This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
+
+XXXXXXXXX TBD
+```
+
+Mistake:
+```
+nmap localhost
+
+>>>
+Starting Nmap 7.40 ( https://nmap.org ) at 2020-09-07 07:43 CEST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00024s latency).
+Not shown: 997 closed ports
+PORT      STATE SERVICE
+22/tcp    open  ssh
+113/tcp   open  ident
+30000/tcp open  ndmps
+Nmap done: 1 IP address (1 host up) scanned in 0.10 seconds
+<<<
+
+./suconnect 22 GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+>>> Read: SSH-2.0-OpenSSH_7.4p1
+>>> ERROR: This doesn't match the current password!
+```
+
+Output:
+```
 XXX
 ```
+
 
