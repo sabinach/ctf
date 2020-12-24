@@ -1,0 +1,50 @@
+
+compare_to_five:	file format Mach-O 64-bit x86-64
+
+
+Disassembly of section __TEXT,__text:
+
+0000000100003ee0 _main:
+100003ee0: 55                          	pushq	%rbp
+100003ee1: 48 89 e5                    	movq	%rsp, %rbp
+100003ee4: 48 83 ec 10                 	subq	$16, %rsp
+100003ee8: c7 45 fc 00 00 00 00        	movl	$0, -4(%rbp)
+100003eef: 48 8d 3d 82 00 00 00        	leaq	130(%rip), %rdi
+100003ef6: b0 00                       	movb	$0, %al
+100003ef8: e8 49 00 00 00              	callq	73 <dyld_stub_binder+0x100003f46>
+100003efd: 48 8d 3d 84 00 00 00        	leaq	132(%rip), %rdi
+100003f04: 48 8d 75 f8                 	leaq	-8(%rbp), %rsi
+100003f08: 89 45 f4                    	movl	%eax, -12(%rbp)
+100003f0b: b0 00                       	movb	$0, %al
+100003f0d: e8 3a 00 00 00              	callq	58 <dyld_stub_binder+0x100003f4c>
+100003f12: 83 7d f8 05                 	cmpl	$5, -8(%rbp)
+100003f16: 0f 8e 13 00 00 00           	jle	19 <_main+0x4f>
+100003f1c: 48 8d 3d 68 00 00 00        	leaq	104(%rip), %rdi
+100003f23: b0 00                       	movb	$0, %al
+100003f25: e8 1c 00 00 00              	callq	28 <dyld_stub_binder+0x100003f46>
+100003f2a: e9 0e 00 00 00              	jmp	14 <_main+0x5d>
+100003f2f: 48 8d 3d 64 00 00 00        	leaq	100(%rip), %rdi
+100003f36: b0 00                       	movb	$0, %al
+100003f38: e8 09 00 00 00              	callq	9 <dyld_stub_binder+0x100003f46>
+100003f3d: 31 c0                       	xorl	%eax, %eax
+100003f3f: 48 83 c4 10                 	addq	$16, %rsp
+100003f43: 5d                          	popq	%rbp
+100003f44: c3                          	retq
+
+Disassembly of section __TEXT,__stubs:
+
+0000000100003f46 __stubs:
+100003f46: ff 25 b4 40 00 00           	jmpq	*16564(%rip)
+100003f4c: ff 25 b6 40 00 00           	jmpq	*16566(%rip)
+
+Disassembly of section __TEXT,__stub_helper:
+
+0000000100003f54 __stub_helper:
+100003f54: 4c 8d 1d b5 40 00 00        	leaq	16565(%rip), %r11
+100003f5b: 41 53                       	pushq	%r11
+100003f5d: ff 25 9d 00 00 00           	jmpq	*157(%rip)
+100003f63: 90                          	nop
+100003f64: 68 00 00 00 00              	pushq	$0
+100003f69: e9 e6 ff ff ff              	jmp	-26 <__stub_helper>
+100003f6e: 68 0e 00 00 00              	pushq	$14
+100003f73: e9 dc ff ff ff              	jmp	-36 <__stub_helper>
