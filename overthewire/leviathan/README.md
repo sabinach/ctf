@@ -1,4 +1,4 @@
-# Leviathon
+# Leviathan
 
 ##  Level 0
 Connect:```ssh leviathanX@leviathan.labs.overthewire.org  -p 2223```      
