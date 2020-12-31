@@ -9,6 +9,9 @@ Problem:
 
 Solution:
 ```
+ls -a
+>>> .  ..  .backup .bash_logout  .bashrc  .profile
+
 cd ~/.backup
 cat bookmarks.html | grep password
 ```
@@ -93,7 +96,7 @@ Helpful Links:
 * https://linux.die.net/man/1/bash
 * If the -p option is supplied at invocation, the startup behavior is the same, but the effective user id is not reset.
 
-Attempts:
+Attempt:
 ```
 whoami
 >>> leviathan2
@@ -221,12 +224,40 @@ Problem:
 
 Solution:
 ```
-XXX
+./level3
+>>> 
+Enter the password> asdf
+bzzzzzzzzap. WRONG
+<<<
+
+ltrace ./level3
+>>>
+__libc_start_main(0x8048618, 1, 0xffffd744, 0x80486d0 <unfinished ...>
+strcmp("h0no33", "kakaka")                                        = -1
+printf("Enter the password> ")                                    = 20
+fgets(Enter the password> asdf
+"asdf\n", 256, 0xf7fc55a0)                                  = 0xffffd550
+strcmp("asdf\n", "snlprintf\n")                                   = -1
+puts("bzzzzzzzzap. WRONG"bzzzzzzzzap. WRONG
+)                                        = 19
++++ exited (status 0) +++
+<<<
+
+./level3
+>>>
+Enter the password> snlprintf
+[You've got shell]!
+$ ls
+level3
+$ whoami
+leviathan4
+$ vim /etc/leviathan_pass/leviathan4
+<<<
 ```
 
 Output:
 ```
-XXX
+vuH0coox6m
 ```
 
 
@@ -235,19 +266,25 @@ XXX
 
 ##  Level 3 → Level 4
 Connect: ```ssh leviathan4@leviathan.labs.overthewire.org  -p 2223```      
-Password: ```XXX```
+Password: ```vuH0coox6m```
 
 Problem:
 - There is no information for this level, intentionally.
 
 Solution:
 ```
-XXX
+ls -a
+>>> .  ..  .bash_logout  .bashrc  .profile  .trash
+
+vim ~/.trash/bin
+>>> 01010100 01101001 01110100 01101000 00110100 01100011 01101111 01101011 01100101 01101001 00001010
+
+Convert via Binary to ASCII: https://www.rapidtables.com/convert/number/binary-to-ascii.html
 ```
 
 Output:
 ```
-XXX
+Tith4cokei
 ```
 
 
@@ -256,19 +293,40 @@ XXX
 
 ##  Level 4 → Level 5
 Connect: ```ssh leviathan5@leviathan.labs.overthewire.org  -p 2223```      
-Password: ```XXX```
+Password: ```Tith4cokei```
 
 Problem:
 - There is no information for this level, intentionally.
 
 Solution:
 ```
-XXX
+ls -l
+>>> total 8
+>>> -r-sr-x--- 1 leviathan6 leviathan5 7560 Aug 26  2019 leviathan5
+
+ltrace ./leviathan5 
+>>>
+ __libc_start_main(0x80485db, 1, 0xffffd784, 0x80486a0 
+ fopen("/tmp/file.log", "r")                  = 0
+ puts("Cannot find /tmp/file.log"Cannot find /tmp/file.log
+ )            = 26
+ exit(-1 
+ +++ exited (status 255) +++
+ <<<
+ 
+ mkdir /tmp/file.log
+ ltrace ./leviathan5 
+ >>> PRINTS A LOT OF GIBBERISH NONSTOP
+ 
+ ^C
+ 
+ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log
+./leviathan5
 ```
 
 Output:
 ```
-XXX
+UgaoFee4li
 ```
 
 
@@ -277,15 +335,33 @@ XXX
 
 ##  Level 5 → Level 6
 Connect: ```ssh leviathan6@leviathan.labs.overthewire.org  -p 2223```      
-Password: ```XXX```
+Password: ```UgaoFee4li```
 
 Problem:
 - There is no information for this level, intentionally.
 
 Solution:
 ```
+./leviathan6
+>>> usage: ./leviathan6 <4 digit code>
+
+./leviathan6 1234
+>>> Wrong
+
+ltrace ./leviathan6 1234
+>>>
+__libc_start_main(0x804853b, 2, 0xffffd724, 0x80485e0 <unfinished ...>
+atoi(0xffffd86a, 0, 0xf7e40890, 0x804862b)                       = 1234
+puts("Wrong"Wrong
+)                                                    = 6
++++ exited (status 0) +++
+<<<
+
 XXX
 ```
+
+Helpful Links:
+* https://en.wikipedia.org/wiki/Code_injection
 
 Output:
 ```
@@ -304,6 +380,11 @@ Problem:
 - There is no information for this level, intentionally.
 
 Solution:
+```
+XXX
+```
+
+Attempt:
 ```
 XXX
 ```
