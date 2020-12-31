@@ -9,13 +9,13 @@ Problem:
 
 Solution:
 ```
-vim ~/.backup/bookmarks.html
-TBD
+cd ~/.backup
+cat bookmarks.html | grep password
 ```
 
 Output:
 ```
-XXX
+<DT><A HREF="http://leviathan.labs.overthewire.org/passwordus.html | This will be fixed later, the password for leviathan1 is rioGegei8m" ADD_DATE="1155384634" LAST_CHARSET="ISO-8859-1" ID="rdf:#$2wIU71">password to leviathan1</A>
 ```
 
 
@@ -24,7 +24,7 @@ XXX
 
 ##  Level 0 → Level 1
 Connect:```ssh leviathan1@leviathan.labs.overthewire.org  -p 2223```      
-Password:```XXX```
+Password:```rioGegei8m```
 
 Problem:
 - There is no information for this level, intentionally.
