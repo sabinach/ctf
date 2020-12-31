@@ -57,7 +57,7 @@ Connect: ```ssh krypton2@krypton.labs.overthewire.org  -p 2231```
 Password: ```ROTTEN```
 
 Problem:
-[lvl2-3.png](https://github.com/sabinach/ctf/tree/master/overthewire/krypton/lvl2-3.png)
+![lvl2-3.png](https://github.com/sabinach/ctf/blob/master/overthewire/krypton/lvl2-3.png)
 
 Solution:
 ```
