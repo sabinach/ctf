@@ -1,8 +1,8 @@
 # Bandit
 
 ## Level 0
-Connect:```ssh bandit0@bandit.labs.overthewire.org -p 2220```      
-Password:```bandit0```
+Connect: ```ssh bandit0@bandit.labs.overthewire.org -p 2220```      
+Password: ```bandit0```
 
 Problem:
 - The goal of this level is for you to log into the game using SSH. The host to which you need to connect is bandit.labs.overthewire.org, on port 2220. The username is bandit0 and the password is bandit0. Once logged in, go to the Level 1 page to find out how to beat Level 1.
@@ -12,8 +12,8 @@ Problem:
 
 
 ##  Level 0 → Level 1
-Connect:```ssh bandit0@bandit.labs.overthewire.org -p 2220```      
-Password:```bandit0```
+Connect: ```ssh bandit0@bandit.labs.overthewire.org -p 2220```      
+Password: ```bandit0```
 
 Problem:
 - The password for the next level is stored in a file called readme located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game.
@@ -33,8 +33,8 @@ boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 
 
 ## Level 1 → Level 2
-Connect:```ssh bandit1@bandit.labs.overthewire.org -p 2220```      
-Password:```boJ9jbbUNNfktd78OOpsqOltutMc3MY1```
+Connect: ```ssh bandit1@bandit.labs.overthewire.org -p 2220```      
+Password: ```boJ9jbbUNNfktd78OOpsqOltutMc3MY1```
 
 Problem:
 - The password for the next level is stored in a file called - located in the home directory
@@ -54,8 +54,8 @@ CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
 
 
 ## Level 2 → Level 3
-Connect:```ssh bandit2@bandit.labs.overthewire.org -p 2220```      
-Password:```CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9```
+Connect: ```ssh bandit2@bandit.labs.overthewire.org -p 2220```      
+Password: ```CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9```
 
 Problem:
 - The password for the next level is stored in a file called spaces in this filename located in the home directory
@@ -75,8 +75,8 @@ UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
 
 
 ## Level 3 → Level 4
-Connect:```ssh bandit3@bandit.labs.overthewire.org -p 2220```      
-Password:```UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK```
+Connect: ```ssh bandit3@bandit.labs.overthewire.org -p 2220```      
+Password: ```UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK```
 
 Problem:
 - The password for the next level is stored in a hidden file in the inhere directory.
@@ -98,8 +98,8 @@ pIwrPrtPN36QITSp3EQaw936yaFoFgAB
 
 
 ## Level 4 → Level 5
-Connect:```ssh bandit4@bandit.labs.overthewire.org -p 2220```      
-Password:```pIwrPrtPN36QITSp3EQaw936yaFoFgAB```
+Connect: ```ssh bandit4@bandit.labs.overthewire.org -p 2220```      
+Password: ```pIwrPrtPN36QITSp3EQaw936yaFoFgAB```
 
 Problem:
 - The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
@@ -127,8 +127,8 @@ koReBOKuIDDepwhWk7jZC0RTdopnAYKh
 
 
 ## Level 5 → Level 6
-Connect:```ssh bandit5@bandit.labs.overthewire.org -p 2220```      
-Password:```koReBOKuIDDepwhWk7jZC0RTdopnAYKh```
+Connect: ```ssh bandit5@bandit.labs.overthewire.org -p 2220```      
+Password: ```koReBOKuIDDepwhWk7jZC0RTdopnAYKh```
 
 Problem:
 - The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
@@ -154,8 +154,8 @@ DXjZPULLxYr17uwoI01bNLQbtFemEgo7
 
 
 ## Level 6 → Level 7
-Connect:```ssh bandit6@bandit.labs.overthewire.org -p 2220```      
-Password:```DXjZPULLxYr17uwoI01bNLQbtFemEgo7```
+Connect: ```ssh bandit6@bandit.labs.overthewire.org -p 2220```      
+Password: ```DXjZPULLxYr17uwoI01bNLQbtFemEgo7```
 
 Problem:
 - The password for the next level is stored somewhere on the server and has all of the following properties:
@@ -179,8 +179,8 @@ HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
 
 
 ## Level 7 → Level 8
-Connect:```ssh bandit7@bandit.labs.overthewire.org -p 2220```      
-Password:```HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs```
+Connect: ```ssh bandit7@bandit.labs.overthewire.org -p 2220```      
+Password: ```HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs```
 
 Problem:
 - The password for the next level is stored in the file data.txt next to the word millionth
@@ -200,8 +200,8 @@ cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 
 
 ## Level 8 → Level 9
-Connect:```ssh bandit8@bandit.labs.overthewire.org -p 2220```      
-Password:```cvX2JJa4CFALtqS87jk27qwqGhBM9plV```
+Connect: ```ssh bandit8@bandit.labs.overthewire.org -p 2220```      
+Password: ```cvX2JJa4CFALtqS87jk27qwqGhBM9plV```
 
 Problem:
 - The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
@@ -221,8 +221,8 @@ UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 
 
 ## Level 9 → Level 10
-Connect:```ssh bandit9@bandit.labs.overthewire.org -p 2220```      
-Password:```UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR```
+Connect: ```ssh bandit9@bandit.labs.overthewire.org -p 2220```      
+Password: ```UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR```
 
 Problem:
 - The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
@@ -257,8 +257,8 @@ S=A.H&^
 
 
 ## Level 10 → Level 11
-Connect:```ssh bandit10@bandit.labs.overthewire.org -p 2220```      
-Password:```truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk```
+Connect: ```ssh bandit10@bandit.labs.overthewire.org -p 2220```      
+Password: ```truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk```
 
 Problem:
 - The password for the next level is stored in the file data.txt, which contains base64 encoded data
@@ -278,8 +278,8 @@ The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
 
 
 ## Level 11 → Level 12
-Connect:```ssh bandit11@bandit.labs.overthewire.org -p 2220```      
-Password:```IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR```
+Connect: ```ssh bandit11@bandit.labs.overthewire.org -p 2220```      
+Password: ```IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR```
 
 Problem:
 - The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
@@ -299,8 +299,8 @@ The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 
 
 ## Level 12 → Level 13
-Connect:```ssh bandit12@bandit.labs.overthewire.org -p 2220```      
-Password:```5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu```
+Connect: ```ssh bandit12@bandit.labs.overthewire.org -p 2220```      
+Password: ```5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu```
 
 Problem:
 - The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
@@ -378,8 +378,8 @@ The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 
 
 ## Level 13 → Level 14
-Connect:```ssh bandit13@bandit.labs.overthewire.org -p 2220```      
-Password:```8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL```
+Connect: ```ssh bandit13@bandit.labs.overthewire.org -p 2220```      
+Password: ```8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL```
 
 Problem:
 - The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on
@@ -411,8 +411,8 @@ Output:
 
 
 ## Level 14 → Level 15
-Connect:```ssh bandit14@bandit.labs.overthewire.org -p 2220```      
-Password:```4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e```
+Connect: ```ssh bandit14@bandit.labs.overthewire.org -p 2220```      
+Password: ```4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e```
 
 Problem:
 - The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
@@ -434,8 +434,8 @@ BfMYroe26WYalil77FoDi9qh59eK5xNr
 
 
 ## Level 15 → Level 16
-Connect:```ssh bandit15@bandit.labs.overthewire.org -p 2220```      
-Password:```BfMYroe26WYalil77FoDi9qh59eK5xNr```
+Connect: ```ssh bandit15@bandit.labs.overthewire.org -p 2220```      
+Password: ```BfMYroe26WYalil77FoDi9qh59eK5xNr```
 
 Problem:
 - The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL encryption.
@@ -462,8 +462,8 @@ cluFn7wTiGryunymYOu4RcffSxQluehd
 
 
 ## Level 16 → Level 17
-Connect:```ssh bandit16@bandit.labs.overthewire.org -p 2220```      
-Password:```cluFn7wTiGryunymYOu4RcffSxQluehd```
+Connect: ```ssh bandit16@bandit.labs.overthewire.org -p 2220```      
+Password: ```cluFn7wTiGryunymYOu4RcffSxQluehd```
 
 Problem:
 - The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then find out which of those speak SSL and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.
@@ -631,8 +631,8 @@ IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 
 
 ## Level 19 → Level 20
-Connect:```ssh bandit19@bandit.labs.overthewire.org -p 2220```      
-Password:```IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x```
+Connect: ```ssh bandit19@bandit.labs.overthewire.org -p 2220```      
+Password: ```IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x```
 
 Problem:
 - To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
@@ -666,8 +666,8 @@ GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 
 
 ## Level 20 → Level 21
-Connect:```ssh bandit20@bandit.labs.overthewire.org -p 2220```      
-Password:```GbKksEFF4yrVs6il55v6gwY5aVje5f0j```
+Connect: ```ssh bandit20@bandit.labs.overthewire.org -p 2220```      
+Password: ```GbKksEFF4yrVs6il55v6gwY5aVje5f0j```
 
 Problem:
 - There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
@@ -737,8 +737,8 @@ gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
 
 
 ## Level 21 → Level 22
-Connect:```ssh bandit21@bandit.labs.overthewire.org -p 2220```      
-Password:```gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr```
+Connect: ```ssh bandit21@bandit.labs.overthewire.org -p 2220```      
+Password: ```gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr```
 
 Problem:
 - A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
@@ -774,8 +774,8 @@ Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 
 
 ## Level 22 → Level 23
-Connect:```ssh bandit22@bandit.labs.overthewire.org -p 2220```      
-Password:```Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI```
+Connect: ```ssh bandit22@bandit.labs.overthewire.org -p 2220```      
+Password: ```Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI```
 
 Problem:
 - A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
@@ -827,8 +827,8 @@ jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
 
 
 ## Level 23 → Level 24
-Connect:```ssh bandit23@bandit.labs.overthewire.org -p 2220```      
-Password:```jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n```
+Connect: ```ssh bandit23@bandit.labs.overthewire.org -p 2220```      
+Password: ```jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n```
 
 Problem:
 - A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
@@ -941,8 +941,8 @@ UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 
 
 ## Level 24 → Level 25
-Connect:```ssh bandit24@bandit.labs.overthewire.org -p 2220```      
-Password:```UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ```
+Connect: ```ssh bandit24@bandit.labs.overthewire.org -p 2220```      
+Password: ```UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ```
 
 Problem:
 - A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
@@ -994,8 +994,8 @@ Exiting.
 
 
 ## Level 25 → Level 26
-Connect:```ssh bandit25@bandit.labs.overthewire.org -p 2220```      
-Password:```uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG```
+Connect: ```ssh bandit25@bandit.labs.overthewire.org -p 2220```      
+Password: ```uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG```
 
 Problem:
 - Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.
@@ -1206,8 +1206,8 @@ Output:
 
 
 ## Level 27 → Level 28
-Connect:```ssh bandit27@bandit.labs.overthewire.org -p 2220```      
-Password:```3ba3118a22e93127a4ed485be72ef5ea```
+Connect: ```ssh bandit27@bandit.labs.overthewire.org -p 2220```      
+Password: ```3ba3118a22e93127a4ed485be72ef5ea```
 
 Problem:
 - There is a git repository at ssh://bandit27-git@localhost/home/bandit27-git/repo. The password for the user bandit27-git is the same as for the user bandit27.
@@ -1236,8 +1236,8 @@ The password to the next level is: 0ef186ac70e04ea33b4c1853d2526fa2
 
 
 ## Level 28 → Level 29
-Connect:```ssh bandit28@bandit.labs.overthewire.org -p 2220```      
-Password:```0ef186ac70e04ea33b4c1853d2526fa2```
+Connect: ```ssh bandit28@bandit.labs.overthewire.org -p 2220```      
+Password: ```0ef186ac70e04ea33b4c1853d2526fa2```
 
 Problem:
 - There is a git repository at ssh://bandit28-git@localhost/home/bandit28-git/repo. The password for the user bandit28-git is the same as for the user bandit28.
@@ -1294,8 +1294,8 @@ index 3f7cee8..5c6457b 100644
 
 
 ## Level 29 → Level 30
-Connect:```ssh bandit29@bandit.labs.overthewire.org -p 2220```      
-Password:```bbc96594b4e001778eee9975372716b2```
+Connect: ```ssh bandit29@bandit.labs.overthewire.org -p 2220```      
+Password: ```bbc96594b4e001778eee9975372716b2```
 
 Problem:
 - There is a git repository at ssh://bandit29-git@localhost/home/bandit29-git/repo. The password for the user bandit29-git is the same as for the user bandit29.
@@ -1356,8 +1356,8 @@ Some notes for bandit30 of bandit.
 
 
 ## Level 30 → Level 31
-Connect:```ssh bandit30@bandit.labs.overthewire.org -p 2220```      
-Password:```5b90576bedb2cc04c86a9e924ce42faf```
+Connect: ```ssh bandit30@bandit.labs.overthewire.org -p 2220```      
+Password: ```5b90576bedb2cc04c86a9e924ce42faf```
 
 Problem:
 - There is a git repository at ssh://bandit30-git@localhost/home/bandit30-git/repo. The password for the user bandit30-git is the same as for the user bandit30.a
@@ -1416,8 +1416,8 @@ Output:
 
 
 ## Level 31 → Level 32
-Connect:```ssh bandit31@bandit.labs.overthewire.org -p 2220```      
-Password:```47e603bb428404d265f59c42920d81e5```
+Connect: ```ssh bandit31@bandit.labs.overthewire.org -p 2220```      
+Password: ```47e603bb428404d265f59c42920d81e5```
 
 Problem:
 - There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo. The password for the user bandit31-git is the same as for the user bandit31.
@@ -1480,8 +1480,8 @@ error: failed to push some refs to 'ssh://bandit31-git@localhost/home/bandit31-g
 
 
 ## Level 32 → Level 33
-Connect:```ssh bandit32@bandit.labs.overthewire.org -p 2220```      
-Password:```56a9bf19c63d650ce78e6ec0354ee45e```
+Connect: ```ssh bandit32@bandit.labs.overthewire.org -p 2220```      
+Password: ```56a9bf19c63d650ce78e6ec0354ee45e```
 
 Problem:
 - After all this git stuff its time for another escape. Good luck!
@@ -1530,8 +1530,8 @@ c9c3199ddf4121b10cf581a98d51caee
 
 
 ## Level 33 → Level 34
-Connect:```ssh bandit33@bandit.labs.overthewire.org -p 2220```      
-Password:```c9c3199ddf4121b10cf581a98d51caee```
+Connect: ```ssh bandit33@bandit.labs.overthewire.org -p 2220```      
+Password: ```c9c3199ddf4121b10cf581a98d51caee```
 
 Problem:
 - At this moment, level 34 does not exist yet.

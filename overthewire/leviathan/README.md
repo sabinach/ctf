@@ -37,12 +37,12 @@ __libc_start_main(0x804853b, 1, 0xffffd724, 0x8048610 <unfinished ...>
 printf("password: ")                                       = 10
 getchar(1, 0, 0x65766f6c, 0x646f6700password: q
 )                      = 113
-getchar(1, 0, 0x65766f6c, 0x646f6700)                      = 10
+getchar(1, 0, 0x65766f6c, 0x646f6700)        = 10
 getchar(1, 0, 0x65766f6c, 0x646f6700q
 )                      = 113
-strcmp("q\nq", "sex")                                      = -1
+strcmp("q\nq", "sex")                                     = -1
 puts("Wrong password, Good Bye ..."Wrong password, Good Bye ...
-)                       = 29
+)                      = 29
 +++ exited (status 0) +++
 <<<
 ```
