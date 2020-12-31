@@ -283,8 +283,11 @@ ls -a
 vim ~/.trash/bin
 >>> 01010100 01101001 01110100 01101000 00110100 01100011 01101111 01101011 01100101 01101001 00001010
 
-Convert via Binary to ASCII: https://www.rapidtables.com/convert/number/binary-to-ascii.html
+# convert binary to ascii using converter below to get password
 ```
+
+Helpful Links:
+* https://www.rapidtables.com/convert/number/binary-to-ascii.html
 
 Output:
 ```
