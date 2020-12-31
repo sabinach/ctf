@@ -1,7 +1,7 @@
 # Krypton
 
 ##  Level 0 → Level 1
-Connect:```ssh kryptonX@krypton.labs.overthewire.org  -p 2231```      
+Connect:```ssh krypton1@krypton.labs.overthewire.org  -p 2231```      
 Password:```XXX```
 
 Problem:
@@ -22,7 +22,7 @@ XXX
 
 
 ##  Level 1 → Level 2
-Connect:```ssh kryptonX@krypton.labs.overthewire.org  -p 2231```      
+Connect:```ssh krypton2@krypton.labs.overthewire.org  -p 2231```      
 Password:```XXX```
 
 Problem:
@@ -43,7 +43,7 @@ XXX
 
 
 ##  Level 2 → Level 3
-Connect:```ssh kryptonX@krypton.labs.overthewire.org  -p 2231```      
+Connect:```ssh krypton3@krypton.labs.overthewire.org  -p 2231```      
 Password:```XXX```
 
 Problem:
@@ -64,7 +64,7 @@ XXX
 
 
 ##  Level 3 → Level 4
-Connect:```ssh kryptonX@krypton.labs.overthewire.org  -p 2231```      
+Connect:```ssh krypton4@krypton.labs.overthewire.org  -p 2231```      
 Password:```XXX```
 
 Problem:
@@ -85,7 +85,7 @@ XXX
 
 
 ##  Level 4 → Level 5
-Connect:```ssh kryptonX@krypton.labs.overthewire.org  -p 2231```      
+Connect:```ssh krypton5@krypton.labs.overthewire.org  -p 2231```      
 Password:```XXX```
 
 Problem:
@@ -106,7 +106,7 @@ XXX
 
 
 ##  Level 5 → Level 6
-Connect:```ssh kryptonX@krypton.labs.overthewire.org  -p 2231```      
+Connect:```ssh krypton6@krypton.labs.overthewire.org  -p 2231```      
 Password:```XXX```
 
 Problem:
@@ -127,7 +127,7 @@ XXX
 
 
 ##  Level 6 → Level 7
-Connect:```ssh kryptonX@krypton.labs.overthewire.org  -p 2231```      
+Connect:```ssh krypton7@krypton.labs.overthewire.org  -p 2231```      
 Password:```XXX```
 
 Problem:
