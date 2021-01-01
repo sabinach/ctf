@@ -24,7 +24,7 @@ def main():
     for shift in range(27):
       print("---")
       print("Shift: " + str(shift))
-      print("Decrypted: " + decrypt(text,shift))
+      print("Decrypted: " + decrypt(text, shift))
 
   else:
     print("To run: ./caesar_cipher.py string-to-decrypt")

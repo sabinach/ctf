@@ -124,10 +124,44 @@ DSNSM YBGVS ENQGW QNBUS KCJDQ ENQIS QGWUJ QJSVL QCNQG WANBM EDJTS JDSAS SJVSX NB
 <<<
 ```
 ```
-# Figure out frequency analysis
+# frequency analysis with found1, found2, and found3:
+
+# ON PERSONAL MACHINE, RUN:
+./frequency_analysis
+>>>
+# found1
+1-gram: S
+2-gram: DS
+3-gram: JDS
+character frequency:
+[('S', 155), ('C', 107), ('Q', 106), ('J', 102), ('U', 100), ('B', 87), ('G', 81), ('N', 74), ('D', 69), ('Z', 57), ('V', 56), ('W', 47), ('Y', 42), ('T', 32), ('M', 29), ('X', 29), ('L', 27), ('K', 25), ('A', 20), ('E', 17), ('F', 11), ('O', 7), ('I', 2), ('H', 2), ('R', 1)]
+----------------
+# found2
+1-gram: S
+2-gram: JD
+3-gram: JDS
+character frequency:
+[('S', 243), ('Q', 186), ('J', 158), ('N', 135), ('U', 130), ('B', 129), ('D', 119), ('G', 111), ('C', 86), ('W', 66), ('Z', 59), ('V', 53), ('M', 45), ('T', 37), ('E', 34), ('Y', 33), ('X', 33), ('K', 30), ('L', 27), ('A', 26), ('I', 14), ('F', 12), ('O', 3), ('H', 2), ('R', 2), ('P', 1)]
+----------------
+# found3
+1-gram: S
+2-gram: JD
+3-gram: JDS
+character frequency:
+[('S', 58), ('Q', 48), ('J', 41), ('G', 35), ('C', 34), ('N', 31), ('B', 30), ('U', 27), ('D', 22), ('V', 21), ('W', 16), ('Z', 16), ('E', 13), ('K', 12), ('M', 12), ('A', 9), ('Y', 9), ('X', 9), ('L', 6), ('T', 6), ('F', 5), ('I', 3), ('O', 2), ('P', 1), ('R', 1)]
+<<<
 ```
 ```
-./caesar_cipher_frequency_analysis.py "KSVVW BGSJD SVSIS VXBMN YQUUK BNWCU ANMJS"
+# NOTES:
+# replace J --> t, D --> h, S --> e
+# Q is the 2nd most common letter, so Q --> a
+
+# OTHER NOTES:
+# 
+
+
+# ON PERSONAL MACHINE, RUN:
+./caesar_cipher_manual.py "KSVVW BGSJD SVSIS VXBMN YQUUK BNWCU ANMJS"
 ```
 
 Helpful Links:
