@@ -23,6 +23,7 @@ Connect: ```ssh krypton1@krypton.labs.overthewire.org  -p 2231```
 Password: ```KRYPTONISGREAT```
 
 Problem:
+- Welcome to Krypton! This game is intended to give hands on experience with cryptography and cryptanalysis.  The levels progress from classic ciphers, to modern, easy to harder. Although there are excellent public tools, like cryptool, to perform the simple analysis, we strongly encourage you to try and do these without them for now.  We will use them in later exercises. ** Please try these levels without cryptool first **
 - The password for level 2 is in the file ‘krypton2’. It is ‘encrypted’ using a simple rotation. It is also in non-standard ciphertext format. When using alpha characters for cipher text it is normal to group the letters into 5 letter clusters, regardless of word boundaries. This helps obfuscate any patterns. This file has kept the plain text word boundaries and carried them to the cipher text. Enjoy!
 
 Solution:
@@ -32,12 +33,6 @@ cd /krypton/krypton1
 ls
 >>> krypton2  README
 
-cat README
->>>
-Welcome to Krypton! This game is intended to give hands on experience with cryptography and cryptanalysis.  The levels progress from classic ciphers, to modern, easy to harder. Although there are excellent public tools, like cryptool, to perform the simple analysis, we strongly encourage you to try and do these without them for now.  We will use them in later exercises. ** Please try these levels without cryptool first **
-<<<
-```
-```
 cat krypton2
 >>> YRIRY GJB CNFFJBEQ EBGGRA
 
@@ -109,8 +104,7 @@ ls
 
 cat krypton4
 >>> KSVVW BGSJD SVSIS VXBMN YQUUK BNWCU ANMJS
-```
-```
+
 cat HINT1
 >>> Some letters are more prevalent in English than others.
 
