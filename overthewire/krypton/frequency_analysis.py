@@ -32,9 +32,13 @@ def get_most_common_ngrams(text):
   print("3-gram: {}".format(find_ngrams(list(text), 3)))
 
   # most frequent characters
-  ngrams_list = list(text)[0:]
-  frequency_list = count_frequency(ngrams_list)
-  print("character frequency: \n{}".format(frequency_list))
+  print("")
+  frequency_list = count_frequency(list(text)[0:])
+  print("1-gram character frequency: \n{}".format(frequency_list[:5]))
+  frequency_list = count_frequency(zip(*(list(text)[i:] for i in range(2))))
+  print("2-gram character frequency: \n{}".format(frequency_list[:5]))
+  frequency_list = count_frequency(zip(*(list(text)[i:] for i in range(3))))
+  print("3-gram character frequency: \n{}".format(frequency_list[:5]))
   print("----------------")
 
 get_most_common_ngrams(FOUND1)

@@ -8,7 +8,7 @@ FOUND2 = "QVJDB MEDGB QJJSG WQGZS NSZBN WUXBN JDSYS NCBWU MNICI STBUJ ACBEN QYDS
 FOUND3 = "DSNSM YBGVS ENQGW QNBUS KCJDQ ENQIS QGWUJ QJSVL QCNQG WANBM EDJTS JDSAS SJVSX NBTQE VQUUZ QUSCG KDCZD CJKQU SGZVB USWCJ KQUQA SQMJC XMVUZ QNQAQ SMUQG WQJJD QJJCT SMGFG BKGJB GQJMN QVCUJ UBXZB MNUSQ ENSQJ YNCPS CGQUZ CSGJC XCZYB CGJBX ICSKJ DSNSK SNSJK BNBMG WAVQZ FUYBJ UGSQN BGSSO JNSTC JLBXJ DSAQZ FQGWQ VBGEB GSGSQ NJDSB JDSNJ DSUZQ VSUKS NSSOZ SSWCG EVLDQ NWQGW EVBUU LKCJD QVVJD SQYYS QNQGZ SBXAM NGCUD SWEBV WJDSK SCEDJ BXJDS CGUSZ JKQUI SNLNS TQNFQ AVSQG WJQFC GEQVV JDCGE UCGJB ZBGUC WSNQJ CBGCZ BMVWD QNWVL AVQTS RMYCJ SNXBN DCUBY CGCBG NSUYS ZJCGE CJ"
 KRYPTON4 = "KSVVW BGSJD SVSIS VXBMN YQUUK BNWCU ANMJS"
 
-def decrypt(original, shift, text): 
+def decrypt(ciphertext, plaintext, text): 
   result = "" 
 
   for i in range(len(text)): 
@@ -16,28 +16,28 @@ def decrypt(original, shift, text):
     if char == " ":
       result += " " 
     else:
-      index = original.index(char)
-      result += shift[index]
+      index = ciphertext.index(char)
+      result += plaintext[index]
     '''
     elif (char.isupper()): 
-      index = original.index(char.lower())
-      result += shift[index].upper()
+      index = ciphertext.index(char.lower())
+      result += plaintext[index].upper()
     '''
 
   return result 
 
 def main(text):
   # cipher rotation
-  ORIGINAL = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  SHIFT = "ABChEFGHItKLMNOPaReTUVWXYZ"
+  CIPHERTEXT = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  PLAINTEXT  = "boihgknqvtwyurxzajemsldfpc"
 
   # remove all spaces
   text = text.replace(" ", "")
 
   print("\n---")
   print("\nText: " + text)
-  print("\nOriginal -> Shift: " + ORIGINAL + " -> " + SHIFT)
-  print("\nDecrypted: " + decrypt(ORIGINAL, SHIFT, text))
+  print("\nCiphertext -> Plaintext: " + CIPHERTEXT + " -> " + PLAINTEXT)
+  print("\nDecrypted: " + decrypt(CIPHERTEXT, PLAINTEXT, text))
 
 main(FOUND1)
 main(FOUND2)
