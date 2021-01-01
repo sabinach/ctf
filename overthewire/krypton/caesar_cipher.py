@@ -16,13 +16,17 @@ def decrypt(text, shift):
 
   return result 
 
-if len(sys.argv) == 2:
-  text = sys.argv[1]
-  print("Text  : " + text)
+def main():
+  if len(sys.argv) == 2:
+    text = sys.argv[1]
+    print("Text: " + text)
 
-  for shift in range(27):
-    print("---")
-    print("Shift : " + str(shift))
-    print("Cipher: " + decrypt(text,shift))
-else:
-  print("To run: ./caesar_cipher.py string-to-decrypt")
+    for shift in range(27):
+      print("---")
+      print("Shift: " + str(shift))
+      print("Decrypted: " + decrypt(text,shift))
+
+  else:
+    print("To run: ./caesar_cipher.py string-to-decrypt")
+
+main()
