@@ -34,6 +34,10 @@ Problem:
 
 Solution:
 ```
+ls 
+>>> check
+```
+```
 ltrace ./check
 >>>
 __libc_start_main(0x804853b, 1, 0xffffd724, 0x8048610 <unfinished ...>
@@ -83,6 +87,9 @@ Problem:
 
 Solution:
 ```
+ls 
+>>> printfile
+
 mkdir /tmp/<username>
 cd /tmp/<username>
 touch "a; bash -p"
@@ -228,6 +235,9 @@ Problem:
 
 Solution:
 ```
+ls 
+>>> level3
+
 ./level3
 >>> Enter the password> asdf
 >>> bzzzzzzzzap. WRONG
@@ -351,6 +361,9 @@ Problem:
 
 Solution:
 ```
+ls 
+>>> leviathan6
+
 ./leviathan6
 >>> usage: ./leviathan6 <4 digit code>
 
