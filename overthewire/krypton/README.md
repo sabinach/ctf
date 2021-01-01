@@ -253,7 +253,7 @@ Connect: ```ssh krypton5@krypton.labs.overthewire.org  -p 2231```
 Password: ```XXX```
 
 Problem:
-- XXX
+- FA can break a known key length as well. Lets try one last polyalphabetic cipher, but this time the key length is unknown.
 
 Solution:
 ```
@@ -274,7 +274,7 @@ Connect: ```ssh krypton6@krypton.labs.overthewire.org  -p 2231```
 Password: ```XXX```
 
 Problem:
-- XXX
+![lvl6-7.png](https://github.com/sabinach/ctf/blob/master/overthewire/krypton/lvl6-7.png)
 
 Solution:
 ```
