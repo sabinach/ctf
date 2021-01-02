@@ -305,7 +305,7 @@ echo hello this is a plaintext file > /tmp/<username>/plaintext
 
 ./encrypt6 /tmp/<username>/plaintext /tmp/<username>/ciphertext
 
-cat /tmp/sallycolly6/ciphertext
+cat /tmp/<username>/ciphertext
 >>> LMNERZFQQHCTWYSQEYBVVUNFI
 ```
 ```
