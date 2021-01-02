@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# Not yet implemented
+
 # To Run: 
 # ./vigenere_cipher.py
 
