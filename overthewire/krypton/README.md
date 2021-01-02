@@ -101,8 +101,7 @@ cd /krypton/krypton3
 
 ls
 >>> found1  found2  found3  HINT1  HINT2  krypton4  README
-```
-```
+
 cat krypton4
 >>> KSVVW BGSJD SVSIS VXBMN YQUUK BNWCU ANMJS
 
@@ -209,8 +208,7 @@ cd /krypton/krypton4
 
 ls
 >>> found1  found2  HINT  krypton5  README
-```
-```
+
 cat krypton5
 >>> HCIKV RJOX
 
@@ -254,8 +252,7 @@ cd /krypton/krypton5
 
 ls
 >>> found1  found2  found3  krypton6  README
-```
-```
+
 cat krypton6
 >>> BELOS Z
 
