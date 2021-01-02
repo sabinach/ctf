@@ -230,6 +230,10 @@ cat found2
 # Use key to decode the krypton5 cipher: https://www.boxentriq.com/code-breaking/vigenere-cipher
 ```
 
+Helpful Links:
+* https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher
+* https://www.youtube.com/watch?v=SkJcmCaHqS0
+
 Output:
 ```
 CLEAR TEXT
