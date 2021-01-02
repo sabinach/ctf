@@ -340,6 +340,10 @@ Entropy analysis
 Look at hex editor
 ```
 
+Helpful links:
+* XXX
+* XXX
+
 Output:
 ```
 XXX
