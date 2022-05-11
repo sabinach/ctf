@@ -39,6 +39,6 @@ class VaultDoor3 {
             buffer[i] = password.charAt(i);
         }
         String s = new String(buffer);
-        return s.equals("jU5t_a_sna_3lpm1dg347_u_4_mfr54b");
+        return s.equals("jU5t_a_sna_3lpm12g94c_u_4_m7ra41");
     }
 }
